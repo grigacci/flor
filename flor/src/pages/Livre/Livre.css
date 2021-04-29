@@ -1,0 +1,6 @@
+.teste {
+    display: flex;
+    flex-direction: column;
+    filter: grayscale(100%);
+    background-size:contain;
+  }

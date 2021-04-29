@@ -82,11 +82,11 @@ function Login() {
             <br></br>
             <Form>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Insira o email" />
+                <Form.Control type="email" placeholder="Insira o email" required/>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Senha" />
+                <Form.Control type="password" placeholder="Senha" required/>
               </Form.Group>
 
               <div className="meio">
