@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.css";
+import "./Cadastro.css";
 import Button from "react-bootstrap/Button";
 import { Form, Row, Col, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
@@ -33,18 +33,12 @@ function Login() {
                     padding: "0px",
                     margin: "0px",
                     borderRadius: "0px",
-                    backgroundColor: "#f3dc01",
+                    backgroundColor: "white",
                     borderRight: "1px solid Black",
-                    borderTopLeftRadius: "10px",
+                    borderTopLeftRadius: "10px"
                   }}
-                  selected
                 >
-                  <Col
-                    style={{
-                      backgroundColor: "#f3dc01",
-                      borderTopLeftRadius: "10px",
-                    }}
-                  >
+                  <Col style={{borderRadius: "0px",borderTopLeftRadius: "10px"}}>
                     <h4>Login</h4>
                   </Col>
                 </Button>
@@ -55,12 +49,13 @@ function Login() {
                     width: "50%",
                     padding: "0px",
                     margin: "0px",
-                    backgroundColor: "white",
                     borderRadius: "0px",
+                    backgroundColor: "#f3dc01",
                     borderTopRightRadius: "10px",
+
                   }}
                 >
-                  <Col style={{borderTopRightRadius: "10px",}}>
+                  <Col style={{ backgroundColor: "#f3dc01" ,borderRadius: "0px",borderTopRightRadius: "10px",}}>
                     <h4>Cadastro</h4>
                   </Col>
                 </Button>
