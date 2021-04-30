@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Menu.css";
 
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Typography, InputBase } from "@material-ui/core";
+import { AppBar, Avatar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Typography, InputBase } from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
 import { IconContext } from "react-icons";
 import { GiSpotedFlower, GiRake } from "react-icons/gi";
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { FiMenu } from "react-icons/fi"
+
 
 
 function Menu() {
@@ -60,14 +61,28 @@ function Menu() {
 
                     <img className="logo" src="/images/nome_horizontal.png" />
 
-                    <div className="search" style={{backgroundColor: "#F2E635", borderRadius:"5px"}}>
-                            <SearchIcon style={{color:"black", opacity: "35%"}} />
+                    <div className="barraPesquisa">
+                        <IconButton>
+                        <SearchIcon style={{ color: "black", opacity: "35%" }} /> 
+                        </IconButton>
                         <InputBase
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
 
+                    <IconContext.Provider value={{size: "1.5rem", className: "carrinho" }}>
+                        <div>
+                            <IconButton>
+                                <AiOutlineShoppingCart />
+                            </IconButton>
+                        </div>
+                    </IconContext.Provider>
+
+                    <div className="userContainer">
+                        <p className="userName">Gilson Roberto Santos</p>
+                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                    </div>
                 </Toolbar>
             </AppBar>
 
