@@ -34,7 +34,7 @@ function Login() {
                     margin: "0px",
                     borderRadius: "0px",
                     backgroundColor: "#f3dc01",
-                    borderRight: "1px solid Black",
+                  
                     borderTopLeftRadius: "10px",
                   }}
                   selected

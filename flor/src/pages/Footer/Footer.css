@@ -1,0 +1,26 @@
+.teste {
+    display: flex;
+    flex-direction: column;
+    filter: grayscale(100%);
+    background-size:contain;
+    height: 30%;
+}
+
+.bg-dar{
+    background-color: black;
+}
+
+.meio{
+    margin:0 auto;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+  }
