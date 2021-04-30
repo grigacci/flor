@@ -5,21 +5,23 @@ import Lista from "./pages/Lista";
 import Livre from "./pages/Livre";
 import Login from "./pages/Login";
 import Perfil from "./pages/Perfil";
-import Cadastro from "./pages/Cadastro"
+import Menu from "./pages/Menu";
 import Footer from "./pages/Footer";
+import Cadastro from "./pages/Cadastro"
+
 
 function Routes(){
     return(
         <BrowserRouter>
          <Switch>
-            <Route exact path="/" component={Hud}/>
-            <Route exact path="/home" component={Hud}/>
-            <Route exact path="/lista" component={Hud}/>
-            <Route exact path="/livre" component={Hud}/>
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/perfil" component={Hud}/>
-            <Route exact path="/cadastro" component={Cadastro}/>
-            <Route exact path="/temp" component={Footer}/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/home" component={Home}/>
+            <Route path="/lista" component={Lista}/>
+            <Route path="/livre" component={Livre}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/perfil" component={Perfil}/>
+            <Route path="/cadastro" component={Cadastro}/>
+            <Route path="/temp" component={Menu}/>
          </Switch>
         </BrowserRouter>
     )
