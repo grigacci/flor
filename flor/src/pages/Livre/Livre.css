@@ -1,6 +1,28 @@
 .teste {
     display: flex;
     flex-direction: column;
-    filter: grayscale(100%);
-    background-size:contain;
   }
+
+  .base {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px;
+}
+
+
+div.polaroid {
+  width: 100%;
+  background-color: white;
+}
+
+img {
+  min-width: 330px;
+  max-width: 800px;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
