@@ -34,7 +34,7 @@ function Login() {
                     margin: "0px",
                     borderRadius: "0px",
                     backgroundColor: "#f3dc01",
-                    borderRight: "1px solid Black",
+                  
                     borderTopLeftRadius: "10px",
                   }}
                   selected
@@ -82,11 +82,11 @@ function Login() {
             <br></br>
             <Form>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Insira o email" />
+                <Form.Control type="email" placeholder="Insira o email" required/>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Senha" />
+                <Form.Control type="password" placeholder="Senha" required/>
               </Form.Group>
 
               <div className="meio">
