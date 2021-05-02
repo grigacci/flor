@@ -9,15 +9,12 @@ function Login() {
   const history = useHistory();
 
   return (
-    <div
-      className="fundo"
-      style={{
+
+      <div className="baseCad" style={{
         backgroundImage: "url(/images/fundo.png)",
         backgroundRepeat: "round",
         opacity: "75%",
-      }}
-    >
-      <div className="base">
+      }}>
         <div className="containe2">
           <div
             className="containe2"
@@ -182,7 +179,7 @@ function Login() {
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
 
