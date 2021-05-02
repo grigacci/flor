@@ -8,16 +8,15 @@
     box-shadow: 10px 5px 5px #A9A9A9;
     margin: 10px;
     padding: 10px;
-    padding-top: 0px;;
-    margin-top: 0px;;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 .containe2{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    max-width: 440px;
-    margin: 10px;
+    max-width: 450px;
     padding: 10px;
     padding-bottom: 0px;
     margin-bottom: 0px;;
@@ -25,25 +24,21 @@
 }
 
 img {
-    display: block;
+ 
     margin-left: auto;
     margin-right: auto;
     width: 50%;
   }
 
-.fundo{
-    height: 100%;
-    width: 100%;
-    background-size:contain;
-    background-color: whitesmoke;
-}
 
-.base {
-    height: 100%;
+.baseCad {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
+    margin-top: 0px;
     border: 2px;
+    flex-direction: column;
     
 }
 

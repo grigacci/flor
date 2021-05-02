@@ -89,6 +89,10 @@ function Login() {
                 <Form.Control type="password" placeholder="Senha" required/>
               </Form.Group>
 
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Lembrar de mim" />
+              </Form.Group>
+
               <div className="meio">
                 <Button variant="primary" type="submit" size="lg" block>
                   Entrar
