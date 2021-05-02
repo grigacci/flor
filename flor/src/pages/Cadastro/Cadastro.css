@@ -21,6 +21,7 @@
     padding: 10px;
     padding-bottom: 0px;
     margin-bottom: 0px;;
+    margin-top: auto;
 }
 
 img {
@@ -43,6 +44,7 @@ img {
     align-items: center;
     justify-content: center;
     border: 2px;
+    
 }
 
 .inputs {
