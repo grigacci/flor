@@ -10,6 +10,7 @@ function Home() {
 
     return (
         <div>
+
             <h1>Home</h1>
             <button onClick={() => {history.push("login")}}>Logout</button>
             
@@ -94,7 +95,7 @@ function Home() {
 <br></br>
        
         </div>
-    )
+    );
 }
 
 export default Home;
