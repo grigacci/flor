@@ -1,0 +1,66 @@
+.lista{
+    width:16rem;
+}
+
+.listItemText{
+    margin-left: 10px;
+}
+
+.logo{
+    display:flex;
+    flex-grow: 1;
+    max-width: 16rem;
+    min-width: 8rem;
+    margin-bottom:0.8rem;
+    margin-left: 0px;
+    background-color: #f3dc01;
+
+}
+
+.barraPesquisa{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.userContainer{
+    display:flex; 
+    margin-left: auto;
+    align-items: center;
+    background-color: #f3dc01;
+}
+
+.userName{
+    margin: 0;
+    margin-right: auto;
+    color:black;
+    font-size: 1.1rem;
+
+}
+
+.carrinho{
+    width: 2rem;
+    color: black;
+    background-color: #f3dc01;
+}
+
+.usuario{
+    width: 2rem;
+    color: black;
+    background-color: #f3dc01;
+}
+
+@media (max-width:500px){
+    .userName{
+        font-size:0px;
+    }
+}
+
+@media (max-width:400px){
+    .logo{
+        min-width: 0px;
+        width:0px;
+    }
+}
