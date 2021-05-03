@@ -1,15 +1,21 @@
-import React from "react";
+import React , {useState} from "react";
 import "./Login.css";
 import Button from "react-bootstrap/Button";
 import { Form, Row, Col, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import api from "../../services/api";
 
 function Login() {
   const history = useHistory();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  function login() {
+    alert("Bem vindo"+ email);
+  }
 
   return (
-
       <div className="baseCad" style={{
         backgroundImage: "url(/images/fundo.png)",
         backgroundSize:"contain",
@@ -79,11 +85,11 @@ function Login() {
             <br></br>
             <Form>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Insira o email" required/>
+                <Form.Control type="email" placeholder="Insira o email" onChange={(e) => setEmail(e.target.value)} required/>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Senha" required/>
+                <Form.Control type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} required/>
               </Form.Group>
 
               <Form.Group controlId="formBasicCheckbox">
@@ -91,7 +97,7 @@ function Login() {
               </Form.Group>
 
               <div className="meioCad">
-                <Button variant="primary" type="submit" size="lg" block>
+                <Button variant="primary" type="submit" size="lg" onClick={login}  block>
                   Entrar
                 </Button>
               </div>
