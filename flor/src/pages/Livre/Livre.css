@@ -17,10 +17,6 @@ div.polaroid {
   background-color: white;
 }
 
-img {
-  min-width: 330px;
-  max-width: 800px;
-}
 
 div.container {
   text-align: center;

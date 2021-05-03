@@ -9,18 +9,15 @@ function Login() {
   const history = useHistory();
 
   return (
-    <div
-      className="fundo"
-      style={{
+
+      <div className="baseCad" style={{
         backgroundImage: "url(/images/fundo.png)",
-        backgroundRepeat: "round",
-        opacity: "75%",
-      }}
-    >
-      <div className="base">
-        <div className="containe2">
+        backgroundSize:"contain",
+        backgroundRepeat:"repeat"
+      }}>
+        <div className="containe2Cad">
           <div
-            className="containe2"
+            className="containe2Cad"
             style={{ padding: "0px", paddingBottom: "0px" }}
           >
             <Container style={{ paddingBottom: "0px" }}>
@@ -68,7 +65,7 @@ function Login() {
             </Container>
           </div>
           <div
-            className="containe"
+            className="containeCad"
             style={{
               borderTopRightRadius: "0px",
               borderTopLeftRadius: "0px",
@@ -76,9 +73,9 @@ function Login() {
             }}
           >
             <br />
-            <img src="/images/logo.png" alt="Logo"></img>
+            <img src="/images/logo.png" alt="Logo" className="imgLog"></img>
             <br />
-            <div className="linha"></div>
+            <div className="linhaCad"></div>
             <br></br>
             <Form>
               <Form.Group controlId="formBasicEmail">
@@ -93,7 +90,7 @@ function Login() {
                 <Form.Check type="checkbox" label="Lembrar de mim" />
               </Form.Group>
 
-              <div className="meio">
+              <div className="meioCad">
                 <Button variant="primary" type="submit" size="lg" block>
                   Entrar
                 </Button>
@@ -102,7 +99,7 @@ function Login() {
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
 
