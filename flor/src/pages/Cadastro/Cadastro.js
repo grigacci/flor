@@ -12,12 +12,11 @@ function Login() {
 
       <div className="baseCad" style={{
         backgroundImage: "url(/images/fundo.png)",
-        backgroundRepeat: "round",
-        opacity: "75%",
+        backgroundSize:"contain"
       }}>
-        <div className="containe2">
+        <div className="containe2Cad">
           <div
-            className="containe2"
+            className="containe2Cad"
             style={{ padding: "0px", paddingBottom: "0px" }}
           >
             <Container style={{ paddingBottom: "0px" }}>
@@ -67,7 +66,7 @@ function Login() {
             </Container>
           </div>
           <div
-            className="containe"
+            className="containeCad"
             style={{
               borderTopRightRadius: "0px",
               borderTopLeftRadius: "0px",
@@ -75,9 +74,9 @@ function Login() {
             }}
           >
             <br />
-            <img src="/images/logo.png" alt="Logo"></img>
+            <img src="/images/logo.png" alt="Logo" className="imgCad"></img>
             <br />
-            <div className="linha"></div>
+            <div className="linhaCad"></div>
             <br></br>
             <Form>
               <Form.Group controlId="formBasicEmail">
@@ -170,7 +169,7 @@ function Login() {
     </Form.Group>
  
 
-              <div className="meio">
+              <div classNameCad="meio">
                 <Button variant="primary" type="submit" size="lg" block>
                   Entrar
                 </Button>

@@ -1,74 +1,72 @@
-.containe {
+.containeLog {
     display: flex;
     flex-direction: column;
     border: 2px solid #f3dc01;
     border-radius: 10px;
-    max-width: 450px;
     background-color: #f3dc01;
     box-shadow: 10px 5px 5px #A9A9A9;
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
-    padding-top: 0px;;
-    margin-top: 0px;;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
+.imgLog {
+ 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
 
-
-.containe2{
+.containe2Log{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    max-width: 450px;
-    margin: 6px;
     padding: 10px;
     padding-bottom: 0px;
-    margin-bottom: 0px;;
+    margin-bottom: 0px;
 }
 
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
 
-.fundo{
-    height: 100%;
-    width: 100%;
-    background-size:contain;
-    background-color: whitesmoke;
-}
-
-.base {
-    height: 100%;
+.baseLog {
     display: flex;
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
     border: 2px;
+    flex-direction: column;
 }
 
-.inputs {
+.inputsLog {
     display: flex;
     flex-direction: column;
     margin-left:15px;
     margin-right: 15px;
 }
 
-.meio {
+.meioLog {
     display: flex;
     justify-content: center;
     align-self: center;
 }
 
-.linha{
+.linhaLog{
     width: 100%;
     border: 1px dashed whitesmoke;
 }
 
 
-.col{
+.colLog{
     background-color: white;
     width: 100%;
     text-align: center;
     border-bottom-style: none;
+}
+
+@media (max-width:1024px){
+    .imgLog{
+        width:80%;
+        height: 100%;
+    }
 }

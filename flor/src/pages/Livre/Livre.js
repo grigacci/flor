@@ -14,7 +14,7 @@ function Livre() {
             <br></br>
             <br></br>
         <div className="polaroid">
-        <img src="/images/comoplantar2.jpg" alt="Tutorial"></img>
+        <img src="/images/comoplantar2.jpg" alt="Tutorial" style={{  minWidth: "330px",  maxWidth: "800px"}}></img>
         <div className="container">
             <p style={{fontSize: "24px"}}>Uma técnica bastante simples de como plantar rosas é utilizando uma batata. Esse truque prático ajuda a rosa a criar raízes naturalmente no solo e fornece a umidade e os nutrientes necessários para o crescimento da roseira. Veja como fazer:</p>
             <br></br>
