@@ -23,4 +23,22 @@
     color: white;
     text-align: center;
     
-  }
+}
+
+.IconFooter{
+    color : white; 
+    margin: 1.5rem;
+}
+
+@media (max-width: 600px){
+    .IconFooter{
+    margin: 1rem;
+    }
+}
+
+@media (max-width: 359px){
+    .IconFooter{
+    margin: 0.5rem;
+    }
+}
+

@@ -74,7 +74,7 @@ function Barra(props) {
                         <FiMenu />
                     </IconButton>
 
-                    <img className="logo" src="/images/nome_horizontal.png" />
+                    <img className="logo" alt="Logo" onClick={()=> clicou("home")} src="/images/nome_horizontal.png" />
 
 
                     <div className="barraPesquisa">
