@@ -23,6 +23,8 @@
     justify-self: center;
     background-color: white;
     border-radius: 5px;
+    max-width: 100%;
+    flex-grow: 1;
 }
 
 .userContainer{
@@ -58,7 +60,7 @@
     }
 }
 
-@media (max-width:400px){
+@media (max-width:550px){
     .logo{
         min-width: 0px;
         width:0px;

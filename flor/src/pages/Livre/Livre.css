@@ -22,3 +22,11 @@ div.container {
   text-align: center;
   padding: 10px 20px;
 }
+
+.imgLiv{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  min-width: 280px;
+}

@@ -10,15 +10,15 @@ function Footer(props) {
     <div className="footer" style={{
         backgroundImage: "url(/images/graminha.png)",backgroundColor: "white"}}>
              
-        <div style={{marginTop: "3rem",backgroundColor: "black"}}>
+        <div style={{marginTop: "3rem",backgroundColor: "black",marginBottom: "0px"}}>
         <div className="meio">
             <h3>
-                <a href="mailto:contato@cpejr.com.br"  style={{color : "white", margin: "1.2rem"}}><HiOutlineMail /></a>
-                <a href="https://web.whatsapp.com/"  style={{color : "white", margin: "1.2rem"}}><FaWhatsapp /></a>
-                <a href="https://www.instagram.com/cpe.jr/"  style={{color : "white", margin: "1.2rem"}}><FaInstagram /></a>
-                <a href="https://www.linkedin.com/company/cpe-jr"  style={{color : "white", margin: "1.2rem"}}><FaLinkedin/></a>
-                <a href="https://www.facebook.com/cpejr"  style={{color : "white", margin: "1.2rem"}}><FaFacebookF /></a>
-                <a href="https://goo.gl/maps/MQ4KbLYt1kZFSNh88"  style={{color : "white", margin: "1.2rem"}}><HiLocationMarker /></a>    
+                <a href="mailto:contato@cpejr.com.br" className="IconFooter"><HiOutlineMail /></a>
+                <a href="https://web.whatsapp.com/" className="IconFooter" ><FaWhatsapp /></a>
+                <a href="https://www.instagram.com/cpe.jr/" className="IconFooter" ><FaInstagram /></a>
+                <a href="https://www.linkedin.com/company/cpe-jr" className="IconFooter" ><FaLinkedin/></a>
+                <a href="https://www.facebook.com/cpejr" className="IconFooter" ><FaFacebookF /></a>
+                <a href="https://goo.gl/maps/MQ4KbLYt1kZFSNh88" className="IconFooter" ><HiLocationMarker /></a>
             </h3>
         </div>
         </div>
