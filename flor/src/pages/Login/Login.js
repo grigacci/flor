@@ -16,14 +16,14 @@ function Login() {
   }
 
   return (
-      <div className="baseCad" style={{
+      <div className="baseLog" style={{
         backgroundImage: "url(/images/fundo.png)",
         backgroundSize:"contain",
         backgroundRepeat:"repeat"
       }}>
-        <div className="containe2Cad">
+        <div className="containe2Log">
           <div
-            className="containe2Cad"
+            className="containe2CadLog"
             style={{ padding: "0px", paddingBottom: "0px" }}
           >
             <Container style={{ paddingBottom: "0px" }}>
@@ -71,7 +71,7 @@ function Login() {
             </Container>
           </div>
           <div
-            className="containeCad"
+            className="containeLog"
             style={{
               borderTopRightRadius: "0px",
               borderTopLeftRadius: "0px",
@@ -81,7 +81,7 @@ function Login() {
             <br />
             <img src="/images/logo.png" alt="Logo" className="imgLog"></img>
             <br />
-            <div className="linhaCad"></div>
+            <div className="linhaLog"></div>
             <br></br>
             <Form>
               <Form.Group controlId="formBasicEmail">
@@ -96,7 +96,7 @@ function Login() {
                 <Form.Check type="checkbox" label="Lembrar de mim" />
               </Form.Group>
 
-              <div className="meioCad">
+              <div className="meioLog">
                 <Button variant="primary" type="submit" size="lg" onClick={login}  block>
                   Entrar
                 </Button>
