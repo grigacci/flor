@@ -16,7 +16,7 @@
  
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width:100%;
   }
 
 .containe2Log{
@@ -76,3 +76,8 @@
     }
 }
 
+@media (max-height:700px){
+    .imgLog{
+        width:55%;
+    }
+}
