@@ -26,7 +26,6 @@
  
     margin-left: auto;
     margin-right: auto;
-
   }
 
 
@@ -71,16 +70,25 @@
     .baseCad{
         height: 100%;
     }
+    .imgCad{
+        width: 90%;
+    }
 }
 
-@media(max-height:1024px){
+@media(max-height:700px){
     .imgCad{
         width: 80%;
+    }
+    .baseCad{
+        height:auto;
     }
 }
 
 @media (max-width:550px){
     .imgCad{
         width:0px;
+    }
+    .baseCad{
+        height: 100%;
     }
 }
