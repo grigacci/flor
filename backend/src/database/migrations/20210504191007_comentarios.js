@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('comentario', function(table) {
-        table.integer('produto_id').notNullable();
+        table.string('produto_id').notNullable();
         table
             .foreign("produto_id")
             .references("produto_id")
