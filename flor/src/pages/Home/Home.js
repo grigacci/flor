@@ -12,12 +12,19 @@ function Home() {
         </br>
         <br>
          </br>
-              <div className="conteiner" > 
-            <Carousel className="keeps" > 
+              <div className="conteiner">
+            <Carousel className="keeps">
+  <Carousel.Item>
+    <img
+      className="imagehome"
+      src="./images/LOGOCARROSSEL.png"
+      alt="First slide"
+    />
+  </Carousel.Item>
   <Carousel.Item>
     <img 
       className="imagehome"
-      src="./images/LOGOCARROSSEL.png"
+      src="./images/Promo1.png"
       alt="First slide"
     />
   </Carousel.Item>
@@ -69,14 +76,14 @@ function Home() {
   <Carousel.Item>
     <img 
       className="image"
-      src="./images/logo.png"
+      src="./images/comentários.png"
       alt="First slide"
     />
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="image"
-      src="./images/fundo.png"
+      src="./images/comentários.png"
       alt="Second slide"
     />
 
@@ -84,24 +91,24 @@ function Home() {
   <Carousel.Item>
     <img
       className="image"
-     src="./images/logo.png"
+     src="./images/comentários.png"
       alt="Third slide"
     />
 
   </Carousel.Item>
 </Carousel>
-<Carousel className="keeps5"> 
+<Carousel className="keeps4"> 
   <Carousel.Item>
     <img 
       className="image"
-      src="./images/logo.png"
+      src="./images/comentários.png"
       alt="First slide"
     />
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="image"
-      src="./images/fundo.png"
+      src="./images/comentários.png"
       alt="Second slide"
     />
 
@@ -109,24 +116,24 @@ function Home() {
   <Carousel.Item>
     <img
       className="image"
-     src="./images/logo.png"
+     src="./images/comentários.png"
       alt="Third slide"
     />
 
   </Carousel.Item>
 </Carousel>
-<Carousel className="keeps6"> 
+<Carousel className="keeps4"> 
   <Carousel.Item>
     <img 
       className="image"
-      src="./images/logo.png"
+      src="./images/comentários.png"
       alt="First slide"
     />
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="image"
-      src="./images/fundo.png"
+      src="./images/comentários.png"
       alt="Second slide"
     />
 
@@ -134,7 +141,7 @@ function Home() {
   <Carousel.Item>
     <img
       className="image"
-     src="./images/logo.png"
+     src="./images/comentários.png"
       alt="Third slide"
     />
 
