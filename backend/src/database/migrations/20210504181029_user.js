@@ -12,7 +12,7 @@ exports.up = function(knex) {
       table.integer('cartao');
       table.integer('mes');
       table.integer('ano');
-      table.integer('cdd');
+      table.integer('cvc');
   })
 };
 
