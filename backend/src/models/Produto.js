@@ -2,11 +2,11 @@ const connection = require("../database/connection");
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
-    async create() {
+    async create(produto) {
         const produto_id = uuidv4();
         produto.produto_id = produto_id;
-        const result = await connection("produto").insert(produto);
-        return result;
+        await connection("produto").insert(produto);
+        return produto_id;
     },
 
     async getById({produto_id}){
