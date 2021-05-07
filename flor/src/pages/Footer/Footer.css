@@ -11,7 +11,8 @@
 }
 
 .meio{
-    margin:0 auto;
+    margin:auto;
+    
 }
 
 .footer {
@@ -36,7 +37,7 @@
     }
 }
 
-@media (max-width: 359px){
+@media (max-width: 360px){
     .IconFooter{
     margin: 0.5rem;
     }
