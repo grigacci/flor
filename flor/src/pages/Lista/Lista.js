@@ -87,14 +87,14 @@ function Lista() {
 
   return (
     <div className="incluiTodos" style={{
-      backgroundImage: "url(/images/fundocaixatexto.png)",
-      backgroundSize: "contain"
-    }}>
-      <img
-        className="imagehome"
-        src="./images/namorados.png"
-        alt="promomaio"
-      />
+        backgroundImage: "url(/images/fundocaixatextos.png)",
+        backgroundSize:"contain"
+      }}>
+        <img
+            className="imagehome"
+            src="./images/namorados.png"
+            alt="promomaio"
+        />
       <div className="titulo">
         <h1>Presenteie quem você ama</h1>
         <h3>aproveitando as promoções do mês</h3>
