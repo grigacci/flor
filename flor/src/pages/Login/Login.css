@@ -69,10 +69,14 @@
     border-bottom-style: none;
 }
 
+@media (max-width:1600px){
+    .imgLog{
+        width:90%;
+    }
+}
 @media (max-width:1024px){
     .imgLog{
-        width:80%;
-        
+        width:80%;     
     }
 }
 
