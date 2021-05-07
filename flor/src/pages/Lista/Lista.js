@@ -9,9 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import "./Lista.css";
 import { Container } from '@material-ui/core';
-import { Col, Form, Image, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import { ButtonToolbar, ButtonGroup } from 'react-bootstrap';
+import { ButtonToolbar, ButtonGroup, Col, Image, Row } from 'react-bootstrap';
 
 const useStyles = makeStyles({
   root: { maxWidth: 345, },
@@ -87,14 +86,14 @@ function Lista() {
 
   return (
     <div className="incluiTodos" style={{
-        backgroundImage: "url(/images/fundocaixatextos.png)",
-        backgroundSize:"contain"
-      }}>
-        <img
-            className="imagehome"
-            src="./images/namorados.png"
-            alt="promomaio"
-        />
+      backgroundImage: "url(/images/fundocaixatextos.png)",
+      backgroundSize: "contain"
+    }}>
+      <img
+        className="imagehome"
+        src="./images/namorados.png"
+        alt="promomaio"
+      />
       <div className="titulo">
         <h1>Presenteie quem você ama</h1>
         <h3>aproveitando as promoções do mês</h3>
@@ -111,16 +110,16 @@ function Lista() {
       }}
       >
 
-          <Row className="promoções">
-          <Col>
+        <Row className="promoções" >
+          <Col className="bolinhasList">
             <Image
               src="/images/2.png"
               onClick={() => history.push("/home")}
               roundedCircle
-              style={{ width: "10rem", height: "10rem" }}
+              style={{ width: "10rem", height: "10rem",marginLeft:"auto"}}
             /><h5>preço1</h5>
           </Col>
-          <Col>
+          <Col className="bolinhasList">
             <Image
               src="/images/3.png"
               onClick={() => history.push("/home")}
@@ -128,7 +127,7 @@ function Lista() {
               style={{ width: "10rem", height: "10rem" }}
             /><h5>preço1</h5>
           </Col>
-          <Col>
+          <Col className="bolinhasList">
             <Image
               src="/images/4.png"
               onClick={() => history.push("/home")}
@@ -136,7 +135,7 @@ function Lista() {
               style={{ width: "10rem", height: "10rem" }}
             /><h5>preço1</h5>
           </Col>
-          <Col >
+          <Col className="bolinhasList">
             <Image
               src="/images/5.png"
               onClick={() => history.push("/home")}
@@ -146,14 +145,16 @@ function Lista() {
             /><h5>preço1</h5>
           </Col>
         </Row>
-        
+
       </Container>
       <div className="geral">
         <Card style={{
-          marginBottom:"auto",
-          overflow:"unset",
-          }}
-          >
+          margin:"1rem",
+          marginBottom: "auto",
+          overflow: "unset",
+          backgroundColor: "#e9e9e9",
+        }}
+        >
           <div className="categorias">
             <p style={{ fontSize: "1.25rem", marginLeft: "8px", marginBottom: "8px", fontFamily: "Abhaya Libre Regular" }}>Como você vai fazer alguém feliz hoje?</p>
             <Button style={{ fontSize: "0.8rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Cestas</Button>
@@ -168,7 +169,7 @@ function Lista() {
           <div className="elementos">
             {produto.map((listItem, index) => {
               return (
-                <div className="box">
+                <div className="boxList">
                   <Card className={classes.root}>
                     <CardActionArea >
                       <CardMedia
@@ -202,18 +203,21 @@ function Lista() {
           </div>
         </div>
       </div>
-        <div>
-          <ButtonToolbar aria-label="Toolbar with button groups">
-            <ButtonGroup className="mr-2" aria-label="Second group">
-              <Button style={{ fontSize: "10px", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>Página Anterior</Button>
-              <Button style={{ fontSize: "10px", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>1</Button>
-              <Button style={{ fontSize: "10px", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>2</Button>
-              <Button style={{ fontSize: "10px", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>3</Button>
-              <Button style={{ fontSize: "10px", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>4</Button>
-              <Button style={{ fontSize: "10px", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>Próxima Página</Button>
-            </ButtonGroup>
-          </ButtonToolbar>
-        </div>
+      <div className="proxPaginaList">
+        <ButtonToolbar aria-label="Toolbar with button groups" style={{
+          justifyContent:"center",
+          width:"100%",
+        }}
+        >
+          <ButtonGroup className="mr-2" aria-label="Second group">
+            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>Página Anterior</Button>
+            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>1</Button>
+            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>2</Button>
+            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>3</Button>
+            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>Próxima Página</Button>
+          </ButtonGroup>
+        </ButtonToolbar>
+      </div>
     </div>
   );
 }
