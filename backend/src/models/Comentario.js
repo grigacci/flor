@@ -9,7 +9,7 @@ module.exports = {
         return result;
     },
 
-    async getById({comentario_id}){
+    async getById(comentario_id){
         const result = await connection("comentario").where(comentario_id).select("*");
         return result;
     },
@@ -25,8 +25,8 @@ module.exports = {
         return result;
     },
 
-    async deleteById({user_id , produto_id}){
-        const result = await connection("comentario").where({user_id , produto_id}).delete();
+    async deleteById(comentario_id){
+        const result = await connection("comentario").where(comentario_id).delete();
         return result;
     },
 
