@@ -4,7 +4,6 @@
   align-self: center;
   align-items: center;
   background-color:  #f3dc01;
-  border-radius: 10px;
   box-shadow: 0.3rem 0.3rem 0.3rem #D9D9D9;
   padding: 0.8rem;
   width:100%;
@@ -60,5 +59,8 @@
 .imagehome{
   display: flex;
   width: 100%;
+}
 
+.TitleHome{
+  align-self: center;
 }
