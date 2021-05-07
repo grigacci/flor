@@ -30,6 +30,22 @@ module.exports = {
         }
     },
 
+    async getById(request , response) {
+        try {
+            const comentario_id = request.params;
+            console.warn(comentario_id)
+            const result = await ComentModel.getById(comentario_id);
+
+            return response.status(200).json(result);
+        } catch (err) {
+            console.log("Comentario getById failed:", err);
+
+            return response.status(500).json({
+                notification: "Internal server error while trying to get Coment",
+            });
+        }
+    },
+
     async update(request , response) {
         try {
             const comentario_id  = request.params;
@@ -49,7 +65,7 @@ module.exports = {
 
     async deleteById(request , response) {
         try {
-            const  id  = request.body;
+            const  id  = request.params;
             const result = await ComentModel.deleteById(id);
      
             return response.status(202).json(result);
