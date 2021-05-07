@@ -57,7 +57,7 @@ function Lista() {
  
   return (
     <div className="incluiTodos" style={{
-        backgroundImage: "url(/images/fundocaixatexto.png)",
+        backgroundImage: "url(/images/fundocaixatextos.png)",
         backgroundSize:"contain"
       }}>
         <img

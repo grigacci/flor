@@ -8,7 +8,7 @@ function Footer(props) {
     <div>
     {props.children}
     <div className="footer" style={{
-        backgroundImage: "url(/images/graminha.png)",backgroundColor: "white"}}>
+        backgroundImage: "url(/images/graminha.png)",backgroundColor: "rgba(0, 0, 0, 0.0)" , opacity: "1"}}>
              
         <div style={{marginTop: "3rem",backgroundColor: "black",marginBottom: "0px"}}>
         <div className="meio">

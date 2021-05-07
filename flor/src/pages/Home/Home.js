@@ -8,10 +8,7 @@ function Home() {
 
     return (
         <div>
-        <br>
-        </br>
-        <br>
-         </br>
+
               <div className="conteiner">
             <Carousel className="keeps">
   <Carousel.Item>
