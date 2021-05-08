@@ -9,7 +9,7 @@ function Perfil() {
   <Row>
     <Col>
     <div>
-        <div className="box">
+        <div className="boxPer">
         <h3 style={{fontSize: "22px" }}>Dados Pessoais</h3>
         </div>
         <br></br>
@@ -91,7 +91,7 @@ function Perfil() {
     </Form.Group>
 
 <br></br>
-    <div className="box">
+    <div className="boxPer">
         <h3 style={{fontSize: "22px" }}>Informações de pagamento</h3>
     </div>
     <br></br>
@@ -123,12 +123,12 @@ function Perfil() {
 
 </Col>
 <Col >
-    <div className="box">
+    <div className="boxPer">
       <h3 style={{fontSize: "22px" }}>Últimos pedidos</h3>
     </div>
     <br></br>
 
-  <div className="alinhar">
+  <div className="alinharPer">
   <Card style={{ width: '19rem'}}>
   <Card.Body>
     <Card.Title>Pedido #25</Card.Title>

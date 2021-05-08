@@ -1,16 +1,4 @@
-.teste {
-    display: flex;
-    flex-direction: column;
-    filter: grayscale(100%);
-    background-size:contain;
-    height: 30%;
-}
-
-.bg-dar{
-    background-color: black;
-}
-
-.meio{
+.meioFooter{
     margin:auto;
     
 }

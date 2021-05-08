@@ -1,4 +1,4 @@
-.box {
+.boxPer {
     align-self: left;
     width: auto;
     border: 1px solid black;
@@ -6,7 +6,7 @@
     background-color: whitesmoke;
 }
 
-.alinhar{
+.alinharPer{
     display: flex;
     align-items: center;
     justify-content: center;

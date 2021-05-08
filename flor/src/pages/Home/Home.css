@@ -1,4 +1,4 @@
-.keeps {
+.keepsHome {
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -12,7 +12,7 @@
 
 }
 
-.keeps2{
+.keeps2Home{
   display:flex;
   flex-direction: line;
   margin-right: auto ;
@@ -22,7 +22,7 @@
   text-align: justify;
 }
 
-.keeps3{
+.keeps3Home{
   display:flex;
   flex-direction: line;
   margin-right: auto ; 
@@ -32,11 +32,11 @@
   text-align:justify;
 }
 
-.conteiner{
+.conteinerHome{
   flex-direction: column;
 }
 
-.keeps4 {
+.keeps4Home {
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -49,7 +49,7 @@
   max-width: 26rem;
 }
 
-.tudo{
+.tudoHome{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

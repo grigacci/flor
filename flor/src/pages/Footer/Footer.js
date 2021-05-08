@@ -11,7 +11,7 @@ function Footer(props) {
         backgroundImage: "url(/images/graminha.png)",backgroundColor: "rgba(0, 0, 0, 0.0)" , opacity: "1"}}>
              
         <div style={{marginTop: "3rem",backgroundColor: "black",marginBottom: "0px"}}>
-        <div className="meio">
+        <div className="meioFooter">
             <h3>
                 <a href="mailto:contato@cpejr.com.br" className="IconFooter"><HiOutlineMail /></a>
                 <a href="https://web.whatsapp.com/" className="IconFooter" ><FaWhatsapp /></a>
