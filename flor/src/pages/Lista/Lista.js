@@ -95,12 +95,12 @@ function Lista() {
         alt="promomaio"
       />
       <div className="titulo">
-        <h1>Presenteie quem você ama</h1>
-        <h3>aproveitando as promoções do mês</h3>
+        <h1>Presenteie quem você ama!</h1>
+        <h3>Aproveite as promoções do mês</h3>
       </div>
       <Container style={{
         width: "100%",
-        display: "block",
+        display: "flex",
         alignItems: "center",
         boxsizing: "border-box",
         marginLeft: "auto",
@@ -116,7 +116,7 @@ function Lista() {
               src="/images/2.png"
               onClick={() => history.push("/home")}
               roundedCircle
-              style={{ width: "10rem", height: "10rem",marginLeft:"auto"}}
+              style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
             /><h5>preço1</h5>
           </Col>
           <Col className="bolinhasList">
@@ -124,7 +124,7 @@ function Lista() {
               src="/images/3.png"
               onClick={() => history.push("/home")}
               roundedCircle
-              style={{ width: "10rem", height: "10rem" }}
+              style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
             /><h5>preço1</h5>
           </Col>
           <Col className="bolinhasList">
@@ -132,7 +132,7 @@ function Lista() {
               src="/images/4.png"
               onClick={() => history.push("/home")}
               roundedCircle
-              style={{ width: "10rem", height: "10rem" }}
+              style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
             /><h5>preço1</h5>
           </Col>
           <Col className="bolinhasList">
@@ -141,7 +141,7 @@ function Lista() {
               onClick={() => history.push("/home")}
               onClick={() => history.push("/home")}
               roundedCircle
-              style={{ width: "10rem", height: "10rem" }}
+              style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
             /><h5>preço1</h5>
           </Col>
         </Row>
@@ -149,20 +149,20 @@ function Lista() {
       </Container>
       <div className="geral">
         <Card style={{
-          margin:"1rem",
+          margin: "1rem",
           marginBottom: "auto",
           overflow: "unset",
           backgroundColor: "#e9e9e9",
         }}
         >
           <div className="categorias">
-            <p style={{ fontSize: "1.25rem", marginLeft: "8px", marginBottom: "8px", fontFamily: "Abhaya Libre Regular" }}>Como você vai fazer alguém feliz hoje?</p>
-            <Button style={{ fontSize: "0.8rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Cestas</Button>
-            <Button style={{ fontSize: "0.8rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Buquês</Button>
-            <Button style={{ fontSize: "0.8rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Sementes</Button>
-            <Button style={{ fontSize: "0.8rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Jardinagem</Button>
-            <Button style={{ fontSize: "0.8rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Coroa de Flores</Button>
-            <Button style={{ fontSize: "0.8rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Vaso de Flores</Button>
+            <p style={{marginBottom: "8px", fontFamily: "Abhaya Libre Regular" }}>Como você vai fazer alguém feliz hoje?</p>
+            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Cestas</Button>
+            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Buquês</Button>
+            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Sementes</Button>
+            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Jardinagem</Button>
+            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Coroa de Flores</Button>
+            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Vaso de Flores</Button>
           </div>
         </Card>
         <div className="baseList">
@@ -204,7 +204,8 @@ function Lista() {
         </div>
       </div>
       <div className="proxPaginaList">
-        <ButtonToolbar aria-label="Toolbar with button groups" style={{
+      <ButtonToolbar aria-label="Toolbar with button groups" style={{
+          display:"flex",
           justifyContent:"center",
           width:"100%",
         }}
