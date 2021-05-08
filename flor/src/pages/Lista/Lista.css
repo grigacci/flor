@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     margin-top: 3rem;
     margin-left: 4rem;
     margin-right: 4rem;
@@ -19,7 +20,8 @@
 
 .promoções {
     display: flex;
-    position: relative;
+    flex-grow: 1;
+    align-self: center;
     flex-direction: row;
     align-items: center;
     margin-top: 2rem;
@@ -29,8 +31,11 @@
 }
 
 .bolinhasList{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction: column;
     padding: 0;
-    align-self: center;
+    align-items: center;
 }
 
 .baseList{
@@ -60,10 +65,8 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 100%;
-    align-items: flex-start;
-    margin-top:0;    
-    width: 10rem;
+    height: 100%; 
+    max-width:10rem;
     margin-bottom: auto;
     box-shadow: 0.1rem  0.1rem 0.1rem  #818181;
     border-radius: 0.3rem;
@@ -98,9 +101,15 @@
     flex-direction: column;
     background-color: #EDEDED;
 }
+.proxPaginaList{
+    display:flex;
+    align-self:center;
+    flex-wrap: wrap;
+}
 
 .mr-2{
     display:flex;
+    flex-wrap: wrap;
     align-self: center;
     margin-bottom: 5rem;
 }
@@ -113,17 +122,16 @@
     .categorias{
         width: max-content;
         align-items: center;
+        max-width: none;
     }
     .baseList{
         margin-top:1rem;
     }
 }
 
-@media (max-width:320px){
-    .categorias{
-        font-size: 1rem;
-    }
-    .mr-2{
-        width:100%;
+@media(max-width:280px){
+    .titulo{
+        margin-left: 2.8rem;
+        margin-right: 2.8rem;
     }
 }
