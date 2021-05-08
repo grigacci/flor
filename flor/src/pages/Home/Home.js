@@ -9,8 +9,8 @@ function Home() {
   return (
     <div>
 
-      <div className="conteiner">
-        <Carousel className="keeps">
+      <div className="conteinerHome">
+        <Carousel className="keepsHome">
           <Carousel.Item>
             <img
               className="imagehome"
@@ -43,7 +43,7 @@ function Home() {
           </Carousel.Item>
         </Carousel>
 
-        <Card className="keeps2" style={{
+        <Card className="keeps2Home" style={{
           backgroundImage: "url(/images/fundocaixatexto.png)",
           backgroundSize: "contain",
         }}>
@@ -56,7 +56,7 @@ function Home() {
         </Card>
       </div>
 
-      <Card className="keeps3" style={{
+      <Card className="keeps3Home" style={{
         backgroundImage: "url(/images/fundocaixatexto.png)",
         backgroundSize: "contain",
       }}>
@@ -68,8 +68,8 @@ function Home() {
         </Card.Body>
       </Card>
 
-      <div className="tudo">
-        <Carousel className="keeps4">
+      <div className="tudoHome">
+        <Carousel className="keeps4Home">
           <Carousel.Item>
             <img
               className="imagehome"
@@ -94,7 +94,7 @@ function Home() {
 
           </Carousel.Item>
         </Carousel>
-        <Carousel className="keeps4">
+        <Carousel className="keeps4Home">
           <Carousel.Item>
             <img
               className="imagehome"
@@ -119,7 +119,7 @@ function Home() {
 
           </Carousel.Item>
         </Carousel>
-        <Carousel className="keeps4">
+        <Carousel className="keeps4Home">
           <Carousel.Item>
             <img
               className="imagehome"

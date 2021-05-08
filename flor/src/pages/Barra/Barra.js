@@ -74,10 +74,10 @@ function Barra(props) {
                         <FiMenu />
                     </IconButton>
 
-                    <img className="logo" alt="Logo" onClick={()=> clicou("home")} src="/images/nome_horizontal.png" />
+                    <img className="logoBarra" alt="Logo" onClick={()=> clicou("home")} src="/images/nome_horizontal.png" />
 
 
-                    <div className="barraPesquisa">
+                    <div className="pesquisaBarra">
                         <IconButton>
                             <SearchIcon style={{ color: "black", opacity: "35%" }} />
                         </IconButton>
@@ -88,7 +88,7 @@ function Barra(props) {
                     </div>
 
 
-                    <IconContext.Provider value={{ size: "1.5rem", className: "carrinho" }}>
+                    <IconContext.Provider value={{ size: "1.5rem", className: "carrinhoBarra" }}>
                         <div>
                             <IconButton>
                                 <AiOutlineShoppingCart />
@@ -98,13 +98,13 @@ function Barra(props) {
 
 
 
-                    <div className="userContainer">
+                    <div className="userContainerBarra">
 
-                        <FormText className="userName" onClick={() => history.push("/home")}>
+                        <FormText className="userNameBarra" onClick={() => history.push("/home")}>
                             Gilson Roberto Santos
                                 </FormText>
 
-                        <IconContext.Provider value={{ className: "usuario" }}>
+                        <IconContext.Provider value={{ className: "usuarioBarra" }}>
                             <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                                 <RiAccountPinCircleFill />
                             </IconButton>
@@ -128,7 +128,7 @@ function Barra(props) {
             </AppBar>
             {props.children}
             <Drawer open={open} onClose={() => abrirMenu(false)}>
-                <List className="lista">
+                <List className="listaBarra">
                     {pages.map((listItem) => {
                         return (
                             <ListItem
@@ -141,7 +141,7 @@ function Barra(props) {
                                 <IconContext.Provider value={{ size: listItem.Size }}>
                                     {listItem.icon}
                                 </IconContext.Provider>
-                                <ListItemText className="listItemText">
+                                <ListItemText className="listItemTextBarra">
                                     {listItem.text}
                                 </ListItemText>
                             </ListItem>

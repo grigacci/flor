@@ -1,12 +1,12 @@
-.lista{
+.listaBarra{
     width:16rem;
 }
 
-.listItemText{
+.listItemTextBarra{
     margin-left: 10px;
 }
 
-.logo{
+.logoBarra{
     display:flex;
     flex-grow: 1;
     max-width: 16rem;
@@ -17,7 +17,7 @@
 
 }
 
-.barraPesquisa{
+.pesquisaBarra{
     display: flex;
     flex-grow: 1;
     align-items: center;
@@ -28,14 +28,14 @@
     flex-grow: 1;
 }
 
-.userContainer{
+.userContainerBarra{
     display:flex; 
     margin-left: auto;
     align-items: center;
     background-color: #f3dc01;
 }
 
-.userName{
+.userNameBarra{
     margin: 0;
     margin-right: auto;
     color:black;
@@ -43,26 +43,26 @@
 
 }
 
-.carrinho{
+.carrinhoBarra{
     width: 2rem;
     color: black;
     background-color: #f3dc01;
 }
 
-.usuario{
+.usuarioBarra{
     width: 2rem;
     color: black;
     background-color: #f3dc01;
 }
 
 @media (max-width:500px){
-    .userName{
+    .userNameBarra{
         font-size:0px;
     }
 }
 
 @media (max-width:550px){
-    .logo{
+    .logoBarra{
         min-width: 0px;
         width:0px;
     }

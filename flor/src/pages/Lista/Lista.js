@@ -85,16 +85,16 @@ function Lista() {
   const classes = useStyles();
 
   return (
-    <div className="incluiTodos" style={{
+    <div className="incluiTodosList" style={{
       backgroundImage: "url(/images/fundocaixatextos.png)",
       backgroundSize: "contain"
     }}>
       <img
-        className="imagehome"
+        className="imagehomeList"
         src="./images/namorados.png"
         alt="promomaio"
       />
-      <div className="titulo">
+      <div className="tituloList">
         <h1>Presenteie quem você ama!</h1>
         <h3>Aproveite as promoções do mês</h3>
       </div>
@@ -110,7 +110,7 @@ function Lista() {
       }}
       >
 
-        <Row className="promoções" >
+        <Row className="promoçõesList" >
           <Col className="bolinhasList">
             <Image
               src="/images/2.png"
@@ -147,7 +147,7 @@ function Lista() {
         </Row>
 
       </Container>
-      <div className="geral">
+      <div className="geralList">
         <Card style={{
           margin: "1rem",
           marginBottom: "auto",
@@ -155,7 +155,7 @@ function Lista() {
           backgroundColor: "#e9e9e9",
         }}
         >
-          <div className="categorias">
+          <div className="categoriasList">
             <p style={{marginBottom: "8px", fontFamily: "Abhaya Libre Regular" }}>Como você vai fazer alguém feliz hoje?</p>
             <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Cestas</Button>
             <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Buquês</Button>
@@ -166,7 +166,7 @@ function Lista() {
           </div>
         </Card>
         <div className="baseList">
-          <div className="elementos">
+          <div className="elementosList">
             {produto.map((listItem, index) => {
               return (
                 <div className="boxList">
@@ -210,7 +210,7 @@ function Lista() {
           width:"100%",
         }}
         >
-          <ButtonGroup className="mr-2" aria-label="Second group">
+          <ButtonGroup className="mr-2List" aria-label="Second group">
             <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>Página Anterior</Button>
             <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>1</Button>
             <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>2</Button>

@@ -1,4 +1,4 @@
-.titulo {
+.tituloList {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@
     margin-right: 0;
 }
 
-.promoções {
+.promoçõesList {
     display: flex;
     flex-grow: 1;
     align-self: center;
@@ -50,7 +50,7 @@
     background-color: #e9e9e9
 }
 
-.elementos{
+.elementosList{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -61,7 +61,7 @@
 
 }
 
-.categorias{
+.categoriasList{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -73,7 +73,7 @@
     background-color: #e9e9e9
 }
 
-.geral{
+.geralList{
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -94,7 +94,7 @@
 
 }
 
-.incluiTodos{
+.incluiTodosList{
     display: flex;
     width: 100%;
     height: 100%;
@@ -107,7 +107,7 @@
     flex-wrap: wrap;
 }
 
-.mr-2{
+.mr-2List{
     display:flex;
     flex-wrap: wrap;
     align-self: center;
@@ -115,11 +115,11 @@
 }
 
 @media(max-width:430px){
-    .geral{
+    .geralList{
         flex-direction:column;
         margin-top: 0;
     }
-    .categorias{
+    .categoriasList{
         width: max-content;
         align-items: center;
         max-width: none;
@@ -130,7 +130,7 @@
 }
 
 @media(max-width:280px){
-    .titulo{
+    .tituloList{
         margin-left: 2.8rem;
         margin-right: 2.8rem;
     }

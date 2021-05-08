@@ -1,24 +1,10 @@
-.teste {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .base {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px;
-}
-
-
-div.polaroid {
+div.polaroidLivre {
   width: 100%;
   background-color: white;
 }
 
 
-div.container {
+div.containerLivre {
   text-align: center;
   padding: 10px 20px;
 }
