@@ -3,6 +3,7 @@ const { celebrate, Segments , Joi} = require('celebrate');
 module.exports = {
     create: celebrate({
         [Segments.BODY] : Joi.object().keys({
+            password: Joi.string().min(6).required(),
             name : Joi.string().required(),
             email : Joi.string().email().required(),
             endereco : Joi.string().required(),
@@ -21,6 +22,9 @@ module.exports = {
         [Segments.PARAMS] : Joi.object().keys({
             user_id : Joi.string().required(),
         }),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required(),
+        }).unknown(),
     }),
 
     updateById: celebrate({
@@ -40,11 +44,17 @@ module.exports = {
             ano : Joi.number().integer().optional(),
             cvc : Joi.number().integer().optional(),
         }),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required(),
+        }).unknown(),
     }),
 
     deleteById: celebrate({
         [Segments.PARAMS] : Joi.object().keys({
             user_id : Joi.string().required(),
         }),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required(),
+        }).unknown(),
     }),
 };

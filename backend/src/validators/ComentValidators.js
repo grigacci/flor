@@ -8,6 +8,9 @@ module.exports = {
             comentario : Joi.string().max(250).required(),
             avaliacao : Joi.number().integer().min(1).max(5).required(),
         }),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required(),
+        }).unknown(),
     }),
 
     getByIds: celebrate({
@@ -15,12 +18,18 @@ module.exports = {
             user_id : Joi.string().required(),
             produto_id : Joi.string().required()
         }),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required(),
+        }).unknown(),
     }),
 
     getById: celebrate({
         [Segments.PARAMS] : Joi.object().keys({
             comentario_id : Joi.string().required(),
         }),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required(),
+        }).unknown(),
     }),
 
     updateById: celebrate({
@@ -31,6 +40,9 @@ module.exports = {
             comentario : Joi.string().required(),
             avaliacao : Joi.string().required()
         }),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required(),
+        }).unknown(),
 
     }),
 
@@ -38,5 +50,8 @@ module.exports = {
         [Segments.PARAMS] : Joi.object().keys({
             comentario_id : Joi.string().required(),
         }),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required(),
+        }).unknown(),
     }),
 };
