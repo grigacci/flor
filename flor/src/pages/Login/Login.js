@@ -5,15 +5,32 @@ import { Form, Row, Col, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import api from "../../services/api";
+import {login} from "../../services/auth";
 
 function Login() {
   const history = useHistory();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  function login() {
-    alert("Bem vindo"+ email);
+  async function handlelogin(e) {
+    e.preventDefault();
+    try {
+      const response = await api.post('/login', {email,  password});
+      alert("Bem vindo",response.data.user.name);
+      login(response.data.accessToken);
+      history.push("/home");
+    } catch (error) {
+      if (error.response.status === 403){
+        alert("Credenciais inválidas")
+      }
+      else {
+        alert(error.resp.data.notification);
+      }
+      console.warn(error);
+    
+    }
   }
+
 
   return (
       <div className="baseLog" style={{
@@ -97,7 +114,7 @@ function Login() {
               </Form.Group>
 
               <div className="meioLog">
-                <Button variant="primary" type="submit" size="lg" onClick={login}  block>
+                <Button variant="primary" type="submit" size="lg" onClick={handlelogin}  block>
                   Entrar
                 </Button>
               </div>

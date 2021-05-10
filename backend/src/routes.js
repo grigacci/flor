@@ -30,8 +30,8 @@ routes.delete("/users/:user_id",UserValidator.deleteById,auth.authenticateToken,
 
 //Comentarios
 routes.post("/comentario",ComentValidator.create,auth.authenticateToken, ComentarioController.create);
-routes.get("/comentario",ComentValidator.getByIds,auth.authenticateToken, ComentarioController.getByIds);
-routes.get("/comentario/:comentario_id",ComentValidator.getById,auth.authenticateToken, ComentarioController.getById);
+routes.get("/comentario",ComentValidator.getByIds,ComentarioController.getByIds);
+routes.get("/comentario/:comentario_id",ComentValidator.getById,ComentarioController.getById);
 routes.put("/comentario/:comentario_id",ComentValidator.updateById,auth.authenticateToken, ComentarioController.update);
 routes.delete("/comentario/:comentario_id",ComentValidator.deleteById,auth.authenticateToken, ComentarioController.deleteById);
 

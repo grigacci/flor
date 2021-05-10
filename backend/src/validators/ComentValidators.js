@@ -18,18 +18,12 @@ module.exports = {
             user_id : Joi.string().required(),
             produto_id : Joi.string().required()
         }),
-        [Segments.HEADERS]: Joi.object().keys({
-            authorization: Joi.string().required(),
-        }).unknown(),
     }),
 
     getById: celebrate({
         [Segments.PARAMS] : Joi.object().keys({
             comentario_id : Joi.string().required(),
         }),
-        [Segments.HEADERS]: Joi.object().keys({
-            authorization: Joi.string().required(),
-        }).unknown(),
     }),
 
     updateById: celebrate({
