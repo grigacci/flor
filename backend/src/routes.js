@@ -18,6 +18,7 @@ routes.post("/login", SessionController.signIn);
 
 //Produto
 routes.get("/produto/:produto_id", ProdutoController.getById);
+routes.get("/produto", ProdutoController.getAll);
 routes.post("/produto",ProdutoController.create);
 routes.put("/produto/:produto_id", ProdutoController.updateById);
 routes.delete("/produto/:produto_id",ProdutoController.deleteById);
