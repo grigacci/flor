@@ -9,6 +9,11 @@ module.exports = {
         return produto_id;
     },
 
+    async getAll(){
+        const result = await connection("produto").select("*");
+        return result;
+    },
+
     async getById({produto_id}){
         const result = await connection("produto").where({produto_id}).select("*");
         return result;

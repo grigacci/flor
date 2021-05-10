@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -11,78 +11,35 @@ import "./Lista.css";
 import { Container } from '@material-ui/core';
 import { useHistory } from 'react-router';
 import { ButtonToolbar, ButtonGroup, Col, Image, Row } from 'react-bootstrap';
+import api from '../../services/api';
 
 const useStyles = makeStyles({
   root: { maxWidth: 345, },
 });
 
-const produto = [
-  {
-    img: '/images/2.png',
-    title: 'Flor 1',
-    preço: '100',
-    descrição: 'Descrição Flor 1',
-  },
-  {
-    img: '/images/3.png',
-    title: 'Flor 2',
-    preço: '200',
-    descrição: 'Descrição Flor 2',
-  },
-  {
-    img: '/images/4.png',
-    title: 'Flor 1',
-    preço: '100',
-    descrição: 'Descrição Flor 1',
-  },
-  {
-    img: '/images/5.png',
-    title: 'Flor 2',
-    preço: '200',
-    descrição: 'Descrição Flor 2',
-  },
-  {
-    img: '/images/logo.png',
-    title: 'Flor 2',
-    preço: '200',
-    descrição: 'Descrição Flor 2',
-  },
-  {
-    img: '/images/2.png',
-    title: 'Flor 1',
-    preço: '100',
-    descrição: 'Descrição Flor 1',
-  },
-  {
-    img: '/images/3.png',
-    title: 'Flor 2',
-    preço: '200',
-    descrição: 'Descrição Flor 2',
-  },
-  {
-    img: '/images/4.png',
-    title: 'Flor 1',
-    preço: '100',
-    descrição: 'Descrição Flor 1',
-  },
-  {
-    img: '/images/5.png',
-    title: 'Flor 2',
-    preço: '200',
-    descrição: 'Descrição Flor 2',
-  },
-  {
-    img: '/images/logo.png',
-    title: 'Flor 2',
-    preço: '200',
-    descrição: 'Descrição Flor 2',
-  },
 
-]
+const _produtos = []
 
 function Lista() {
   const history = useHistory();
   const classes = useStyles();
+  const [produto, setProdutos] = useState(_produtos);
+
+
+  async function getProdutos(){
+    try {
+      const response = await api.get("/produto");
+      setProdutos([...response.data])
+    } catch (error) {
+      console.warn(error);
+      alert("Algo deu ruim")
+    }
+  }
+
+  useEffect(() => {
+    getProdutos();
+  },[])
+
 
   return (
     <div className="incluiTodosList" style={{
@@ -139,7 +96,6 @@ function Lista() {
             <Image
               src="/images/5.png"
               onClick={() => history.push("/home")}
-              onClick={() => history.push("/home")}
               roundedCircle
               style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
             /><h5>preço1</h5>
@@ -168,26 +124,27 @@ function Lista() {
         <div className="baseList">
           <div className="elementosList">
             {produto.map((listItem, index) => {
+              var nome = `/images/${listItem.produto_id}.jpg`;
               return (
                 <div className="boxList">
                   <Card className={classes.root}>
                     <CardActionArea >
                       <CardMedia
                         component="img"
-                        alt="Contemplative Reptile"
+                        alt={listItem.name}
                         height="140"
-                        image={listItem.img}
-                        title={listItem.title}
+                        image={nome}
+                        title={listItem.name}
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
-                          {listItem.title}
+                          {listItem.name}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
                           {listItem.descrição}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                          R${listItem.preço},90
+                          R${listItem.preco}
                                 </Typography>
                       </CardContent>
                     </CardActionArea>
