@@ -1,12 +1,43 @@
-import React from "react";
+import React , {useState} from "react";
 import "./Cadastro.css";
 import Button from "react-bootstrap/Button";
 import { Form, Row, Col, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import api from "../../services/api";
+import {login} from "../../services/auth";
 
-function Login() {
+
+function Cadastro() {
   const history = useHistory();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [name, setName] = useState();
+  const [endereco, setEndereco] = useState();
+  const [cidade, setCidade] = useState();
+  const [estado, setEstado] = useState();
+  const [cep, setCep] = useState();
+  const [flor, setFlor] = useState();
+
+  async function handleCad(e) {
+    e.preventDefault();
+    try {
+      const response2 = await api.post('/cadastro', {email,  password , name , endereco , cidade , estado , cep , flor});
+      const response = await api.post('/login', {email,  password});
+      alert("Bem vindo",response.data);
+      login(response.data.accessToken);
+      history.push("/home");
+    } catch (error) {
+      
+      if (error.response.status === 403){
+        alert("Credenciais inválidas")
+      }
+      else {
+        alert("Opa");
+      }
+    }
+  }
+
 
   return (
 
@@ -80,33 +111,33 @@ function Login() {
             <br></br>
             <Form>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Insira o email" required/>
+                <Form.Control type="email" placeholder="Insira o email" onChange={(e) => setEmail(e.target.value)} required/>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Senha" required/>
+                <Form.Control type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} required/>
               </Form.Group>
 
               <Form.Group controlId="formBasicName">
-                <Form.Control type="Name" placeholder="Insira o nome" required />
+                <Form.Control type="Name" placeholder="Insira o nome" onChange={(e) => setName(e.target.value)} required />
               </Form.Group>
 
               <Form.Group controlId="formGridAddress" required>
-                <Form.Control placeholder="Endereço" required/>
+                <Form.Control placeholder="Endereço" onChange={(e) => setEndereco(e.target.value)} required/>
               </Form.Group>
 
               <Form.Group controlId="formGridCidade" required>
-                <Form.Control placeholder="Cidade" required/>
+                <Form.Control placeholder="Cidade" onChange={(e) => setCidade(e.target.value)} required/>
               </Form.Group>
 
               <Form.Row style={{ backgroundColor: "#f3dc01" }} required>
                 <Form.Group
                   as={Col}
                   controlId="formGridState"
-                  style={{ backgroundColor: "#f3dc01" }}
+                  style={{ backgroundColor: "#f3dc01" }} onChange={(e) => setEstado(e.target.value)}
                   required>
-                  <Form.Control as="select" defaultValue="Minas Gerais" placeholder="Estado" required>
-                
+                  <Form.Control as="select" placeholder="Estado" onChange={(e) => setEstado(e.target.value)} required>
+
                     <option>Acre</option>
                     <option>Alagoas</option>
                     <option>Amapá</option>
@@ -141,7 +172,7 @@ function Login() {
                   controlId="formGridZip"
                   style={{ backgroundColor: "#f3dc01" }}
                   required>
-                  <Form.Control placeholder="CEP" required/>
+                  <Form.Control placeholder="CEP" onChange={(e) => setCep(e.target.value)} required/>
                 </Form.Group>
               </Form.Row>
 
@@ -156,21 +187,21 @@ function Login() {
           label="Rosas"
           name="formHorizontalRadios"
           id="formHorizontalRadios1"
-        style={{marginRight: "20px",fontSize: "20px"}}required/>
+        style={{marginRight: "20px",fontSize: "20px"}}required onChange={(e) => setFlor(e.target.value)}/>
         <Form.Check
           type="radio"
           label="Tulipa"
           name="formHorizontalRadios"
           id="formHorizontalRadios2"
           style={{fontSize: "20px"}}
-          required
+          onChange={(e) => setFlor(e.target.value)} required
         />
       </Form.Row>
     </Form.Group>
  
 
               <div classNameCad="meio">
-                <Button variant="primary" type="submit" size="lg" block>
+                <Button variant="primary" type="submit" size="lg" onClick={handleCad} block>
                   Entrar
                 </Button>
               </div>
@@ -182,4 +213,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Cadastro;
