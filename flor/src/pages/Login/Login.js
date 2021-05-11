@@ -16,15 +16,15 @@ function Login() {
     e.preventDefault();
     try {
       const response = await api.post('/login', {email,  password});
-      alert("Bem vindo",response.data.user.name);
+      alert("Bem vindo",response.data);
       login(response.data.accessToken);
       history.push("/home");
     } catch (error) {
-      if (error.response.status === 403){
+      if (error.status === 403){
         alert("Credenciais inválidas")
       }
       else {
-        alert(error.resp.data.notification);
+        alert(error);
       }
       console.warn(error);
     

@@ -25,6 +25,7 @@ routes.delete("/produto/:produto_id",ProdutoController.deleteById);
 
 //User
 routes.post("/users",UserValidator.create, UserController.create);
+routes.post("/cadastro",UserValidator.create, UserController.create);
 routes.get("/users/:user_id",UserValidator.getById,auth.authenticateToken, UserController.getById);
 routes.put("/users/:user_id",UserValidator.updateById,auth.authenticateToken, UserController.update);
 routes.delete("/users/:user_id",UserValidator.deleteById,auth.authenticateToken, UserController.delete);
