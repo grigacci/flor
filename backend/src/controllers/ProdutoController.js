@@ -17,7 +17,7 @@ module.exports = {
 
     async getById(request , response) {
         try {
-            const { produto_id } = request.params;
+            const produto_id  = request.params;
             const result = await ProdutoModel.getById(produto_id);
 
             return response.status(200).json(result);
@@ -47,14 +47,13 @@ module.exports = {
 
     async updateById(request , response) {
         try {
-            const { produto_id } = request.params;
+            const produto_id = request.params;
             const produto = request.body;
             const result = await ProdutoModel.updateById(produto_id, produto);
-
             return response.status(200).json(result);
         } catch (err) {
             console.log("Produto update failed:",err);
-
+            console.warn("Produto update failed:",err);
             return response.status(500).json({
                 notification: "Internal server error while trying to update Produto",
             });
