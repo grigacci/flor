@@ -1,62 +1,33 @@
-import React, { useState } from "react";
+import { CardMedia, Button } from "@material-ui/core";
+import React, { useState, useEffect } from "react";
 import "./ProdutoModal.css";
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import api from '../../services/api';
 
 
-const useStyles = makeStyles((theme) => ({
-    modal: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    paper: {
-        backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
-    },
-}));
 
-function ProdutoModal() {
+/*      (produto) ?
+      <h1>antes</h1>:<h1>depois</h1> */
 
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
 
-    const handleOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
+function ProdutoModal({ data, open }) {
+    if (!open) return
+    console.log(data);
+    let nome = `/images/${data.produto_id}.jpg`;
     return (
-        <div className="containerMod">
-            <button type="button" onClick={handleOpen}>
-                react-transition-group
-            </button>
-            <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                className={classes.modal}
-                open={open}
-                onClose={handleClose}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                    timeout: 500,
+
+        <div className="modalContainer">
+                <p style={{
+                    fontSize:"1.5rem",
+                    alignSelf:"center"
                 }}
-            >
-                <Fade in={open}>
-                    <div className={classes.paper}>
-                        <h2 id="transition-modal-title">Transition modal</h2>
-                        <p id="transition-modal-description">react-transition-group animates me.</p>
-                    </div>
-                </Fade>
-            </Modal>
+                >
+                   {data.name} 
+                </p>
+
+            <img src={nome} className="imgModal"></img>
+
+            <h2>Descrição do produto:</h2>
+            {data.descricao}
         </div>
     );
 }
