@@ -1,0 +1,51 @@
+.modalContainer {
+    width: 30rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 11px;
+  }
+  
+  .produtoModalTitle {
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self:center;
+    align-self:center;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+.imgModal{
+    display:flex;
+    width:70%;
+    align-self: center;
+    justify-self: center;
+}
+  .produtoModalDescription {
+    border-color: #dbdbdb;
+    border-style: solid;
+    border-width: 1.5px;
+    padding: 8px;
+    font-family: "Roboto", sans-serif;
+  
+  }
+  
+  .produtoModalDescription {
+    font-weight: 300;
+    font-size: 0.9rem;
+  
+    height: 40vh;
+    resize: none;
+    overflow: auto;
+    border-top: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .buttonsRow {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;  
+  }
