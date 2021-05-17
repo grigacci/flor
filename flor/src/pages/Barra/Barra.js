@@ -12,8 +12,6 @@ import { RiAccountPinCircleFill } from "react-icons/ri";
 import { FormText } from "react-bootstrap";
 
 
-
-
 function Barra(props) {
 
     const history = useHistory();
