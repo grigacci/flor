@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
@@ -44,23 +44,23 @@ const AccordionSummary = withStyles({
 
 const AccordionDetails = withStyles((theme) => ({
     root: {
-      padding: theme.spacing(2),
+        padding: theme.spacing(2),
     },
-  }))(MuiAccordionDetails);
-  
+}))(MuiAccordionDetails);
+
 
 /*      (produto) ?
       <h1>antes</h1>:<h1>depois</h1> */
 
 
-function ProdutoModal({ data, open, onClose }) {
+function ProdutoModal({ data, show, onHide }) {
     const [expanded, setExpanded] = React.useState();
 
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
 
-    if (!open) return
+    if (!show) return
     console.log(data);
     let nome = `/images/${data.produto_id}.jpg`;
     return (
@@ -90,7 +90,7 @@ function ProdutoModal({ data, open, onClose }) {
                 </Button>
             </div>
 
-            <div>
+            <div className="accordionModal">
                 <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
                         <Typography>Descrição do produto</Typography>
@@ -123,31 +123,32 @@ function ProdutoModal({ data, open, onClose }) {
                     </AccordionDetails>
                 </Accordion>
             </div>
-
-            <p className="textModal">Nos conte o que achou do produto!</p>
-            <textarea
-                className="comentarioModal"
-            />
-            <div className="buttonsRow">
-                <Button onClick={onClose} style={{
-                    marginTop: "10px",
-                    marginRight: "auto",
-                    textTransform: "none",
-                    backgroundColor: "rgba(65,137,230,.15)",
-                    color: "#3483fa",
-                }}>
-                    Voltar Página
+            <div className="finalModal">
+                <p className="textModal">Nos conte o que achou do produto!</p>
+                <textarea
+                    className="comentarioModal"
+                />
+                <div className="buttonsRow">
+                    <Button onClick={onHide} style={{
+                        marginTop: "10px",
+                        marginRight: "auto",
+                        textTransform: "none",
+                        backgroundColor: "rgba(65,137,230,.15)",
+                        color: "#3483fa",
+                    }}>
+                        Voltar Página
                 </Button>
-                <Button variant="contained" color="primary" style={{
-                    marginTop: "10px",
-                    marginLeft: "auto",
-                    textTransform: "none",
-                    backgroundColor: "#3483fa",
-                    color: "#fff",
-                }}>
-                    Enviar Comentário
+                    <Button variant="contained" color="primary" style={{
+                        marginTop: "10px",
+                        marginLeft: "auto",
+                        textTransform: "none",
+                        backgroundColor: "#3483fa",
+                        color: "#fff",
+                    }}>
+                        Enviar Comentário
                 </Button>
-
+            </div>
+                
             </div>
         </div>
     );

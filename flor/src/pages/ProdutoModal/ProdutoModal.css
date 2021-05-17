@@ -7,7 +7,9 @@
     background-color: #fff;
     border-radius: 11px;
     align-self:center;
+    justify-self: center;
     justify-items:center;
+    overflow:auto;
   }
   
   .produtoModalTitle {
@@ -58,6 +60,12 @@
     justify-content: space-between;  
 }
 
+.finalModal{
+  display:flex;
+  flex-direction: column;
+
+}
+
 .comentarioModal{
     font-weight: 300;
     font-size: 0.9rem;
@@ -65,4 +73,27 @@
     resize: none;
     overflow: auto;
     border-radius: 8px;
+  }
+
+  @media (max-width:1024px){
+    .modalContainer{
+      width:40rem;
+      height:47rem;
+    }
+    .finalModal{
+      margin-top:auto;
+    }
+    .accordionModal{
+      margin-top:4rem;
+    }
+  }
+
+  @media (max-width:414px){
+    .modalContainer{
+      width:100%;
+      height:100%;
+    }
+    .accordionModal{
+      margin-top:0;
+    }
   }
