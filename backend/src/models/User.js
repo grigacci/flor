@@ -27,6 +27,11 @@ module.exports = {
     async getByFields(fields) {
         const result = await connection("user").where(fields).select("*").first();
         return result;
+    },
+
+    async getName(fields) {
+        const result = await connection("user").where(fields).select("name").all();
+        return result;
     }
 
 }

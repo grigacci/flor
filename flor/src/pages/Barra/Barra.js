@@ -24,6 +24,14 @@ function Barra(props) {
         history.push(pathName);
         setPaginaAtual(pathName);
     }
+  
+      function logout(pathName) {
+        history.push(pathName);
+        setPaginaAtual(pathName);
+        sessionStorage.removeItem('@flor/email');
+        sessionStorage.removeItem('@flor-Token');
+        sessionStorage.removeItem('@flor/dados');
+    }
 
     function abrirMenu(isOpen) {
         setOpen(isOpen);
@@ -117,7 +125,7 @@ function Barra(props) {
                             onClose={handleClose}
                         >
                             <MenuItem onClick={() => { clicou("/perfil") }}>Perfil</MenuItem>
-                            <MenuItem onClick={() => { clicou("/login") }}>Logout</MenuItem>
+                            <MenuItem onClick={() => { logout("/login") }}>Logout</MenuItem>
                         </Menu>
                     </div>
 
@@ -156,5 +164,6 @@ function Barra(props) {
 
     );
 }
+
 
 export default Barra;

@@ -57,4 +57,13 @@ module.exports = {
             authorization: Joi.string().required(),
         }).unknown(),
     }),
+
+    getByName: celebrate({
+        [Segments.PARAMS] : Joi.object().keys({
+            name : Joi.string().min(1).required()
+        }).required(),
+        [Segments.HEADERS]: Joi.object().keys({
+            authorization: Joi.string().required()
+        }).unknown(),
+    }),
 };

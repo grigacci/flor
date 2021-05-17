@@ -1,42 +1,47 @@
-import React from 'react';
+import React, { useState , useEffect} from 'react';
 import { Container, Row, Col, Form , Button, Card} from "react-bootstrap";
 import "./Perfil.css"
+import api from "../../services/api";
+
 
 function Perfil() {
-    return (<div>
+  const dados = JSON.parse(sessionStorage.getItem('@flor/dados'));
+  
+
+return (<div>
 <div style={{marginTop: "5rem"}}>
 <Container>
   <Row>
     <Col>
     <div>
         <div className="boxPer">
-        <h3 style={{fontSize: "22px" }}>Dados Pessoais</h3>
+        <h3 style={{fontSize: "22px" }}>Informações</h3>
         </div>
         <br></br>
         <Form>
  
     <Form.Group  controlId="formGridEmail">
-      <Form.Control type="email" placeholder="Email" required/>
+      <Form.Control type="email" placeholder="Email" value={dados.email} required/>
     </Form.Group>
 
     <Form.Group  controlId="formGridPassword">
-      <Form.Control type="text" placeholder="Nome" required/>
+      <Form.Control type="text" placeholder="Nome" value={dados.name}  required/>
     </Form.Group>
 
 
   <Form.Group controlId="formGridAddress1">
-    <Form.Control placeholder="Endereço" required/>
+    <Form.Control placeholder="Endereço" value={dados.endereco} required/>
   </Form.Group>
 
 
   
     <Form.Group  controlId="formGridCity">
-      <Form.Control  placeholder="Cidade" required/>
+      <Form.Control  placeholder="Cidade" value={dados.cidade} required/>
     </Form.Group>
 
     <Form.Row>
     <Form.Group as={Col} controlId="formGridState">
-      <Form.Control as="select" defaultValue="Choose..." required>
+      <Form.Control as="select" defaultValue="Choose..." value={dados.estado} required>
                     <option>Acre</option>
                     <option>Alagoas</option>
                     <option>Amapá</option>
@@ -67,25 +72,25 @@ function Perfil() {
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridZip">
-      <Form.Control placeholder="CEP" required/>
+      <Form.Control placeholder="CEP" value={dados.cep} required/>
     </Form.Group>
     
   </Form.Row>
-  <Form.Group >
+  <Form.Group>
       <Form.Row style={{justifyContent: "center"}}>
         <Form.Check
           type="radio"
           label="Rosas"
           name="formHorizontalRadios"
           id="formHorizontalRadios1"
-        style={{marginRight: "20px",fontSize: "20px"}}required/>
+        style={{marginRight: "20px",fontSize: "20px"}} value={dados.flor} required/>
         <Form.Check
           type="radio"
           label="Tulipa"
           name="formHorizontalRadios"
           id="formHorizontalRadios2"
           style={{fontSize: "20px"}}
-          required
+          value={dados.flor} required
         />
       </Form.Row>
     </Form.Group>
@@ -97,20 +102,20 @@ function Perfil() {
     <br></br>
     
   <Form.Group controlId="formBasicCard">
-    <Form.Control type="number" placeholder="Cartão" required/>
+    <Form.Control type="number" placeholder="Cartão" value={dados.cartao} required/>
   </Form.Group>
 
   <Form.Row>
     <Form.Group as={Col} controlId="formGridMes">
-      <Form.Control type="number" max="12" placeholder="Mês de vencimento"/>
+      <Form.Control type="number" max="12" placeholder="Mês de vencimento" value={dados.mes} required/>
     </Form.Group>
         
     <Form.Group as={Col} controlId="formGridAno">
-      <Form.Control type="number" max="2050" placeholder="Ano de vencimento" required/>
+      <Form.Control type="number" max="2050" placeholder="Ano de vencimento" value={dados.ano} required/>
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridCodigo">
-      <Form.Control  type="number" max="999" placeholder="Código de segurança" required/>
+      <Form.Control  type="number" max="999" placeholder="Código de segurança" value={dados.cvc} required/>
     </Form.Group>
   </Form.Row>
   <Button variant="primary" type="submit" >
