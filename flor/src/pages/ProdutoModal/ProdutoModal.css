@@ -1,0 +1,99 @@
+.modalContainer {
+    width: 30rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 11px;
+    align-self:center;
+    justify-self: center;
+    justify-items:center;
+    overflow:auto;
+  }
+  
+  .produtoModalTitle {
+    font-weight: 500;
+    text-transform: uppercase;
+    align-self:center;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom:3px;
+    margin-top:-18px;
+  }
+
+  .linhaHModal{
+    width: 28rem;
+    border:1px solid;
+    align-self: center;
+    color:rgba(214, 213, 213, 0.63);
+  }
+  
+.imgModal{
+    display:flex;
+    width:45%;
+    align-self: center;
+    justify-self: center;
+    background-color: rgba(255,255,255,0.0);
+}
+
+.carrinhoModal{
+  display:flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.cancelarModal{
+  
+  border-color: transparent;
+  background-color: rgba(65,137,230,.15);
+  color: #3483fa;
+
+}
+.textModal{
+  font-size: 1.08rem;
+  margin-bottom: 0px;
+}
+
+.buttonsRow {
+    display: flex;
+    justify-content: space-between;  
+}
+
+.finalModal{
+  display:flex;
+  flex-direction: column;
+
+}
+
+.comentarioModal{
+    font-weight: 300;
+    font-size: 0.9rem;
+    height: 4rem;
+    resize: none;
+    overflow: auto;
+    border-radius: 8px;
+  }
+
+  @media (max-width:1024px){
+    .modalContainer{
+      width:40rem;
+      height:47rem;
+    }
+    .finalModal{
+      margin-top:auto;
+    }
+    .accordionModal{
+      margin-top:4rem;
+    }
+  }
+
+  @media (max-width:414px){
+    .modalContainer{
+      width:100%;
+      height:100%;
+    }
+    .accordionModal{
+      margin-top:0;
+    }
+  }
