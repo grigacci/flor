@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles, Card, Button, Container, CardActionArea, CardMedia, CardContent, Typography, Modal } from '@material-ui/core/';
+import { makeStyles, Card, Button, Container, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core/';
 import "./Lista.css";
 import { useHistory } from 'react-router';
 import { ButtonToolbar, ButtonGroup, Col, Image, Row } from 'react-bootstrap';
 import api from '../../services/api';
 import ProdutoModal from "../ProdutoModal"
+import Modal from 'react-bootstrap/Modal'
 
 
 const useStyles = makeStyles({
@@ -21,7 +22,7 @@ function Lista() {
   const [produto, setProdutos] = useState(_produtos);
   const [produtoAtual, setProdutoAtual] = useState();
   const [modalShow, setModalShow] = React.useState(false);
-  const [open, setOpen] = useState(false);
+  const [show, setOpen] = useState(false);
   console.log(produtoAtual);
 
 
@@ -45,7 +46,7 @@ function Lista() {
   }
 
   function teste() {
-    if (open === true) {
+    if (show === true) {
       console.log(produtoAtual.name);
       return produtoAtual.name;
     }
@@ -178,15 +179,16 @@ function Lista() {
 
                   <div className="modal">
                     <Modal
-                    
-                      
+                      centered
                       className="modalList"
-                      open={open}
+                      show={show}
+                      style={{ display:"flex" ,backgroundImage: "url(/images/fundo.png)" }}
                     >
                       <ProdutoModal
-                        open={open}
+                        show={show}
+                        onHide={handleClose}
                         data={produtoAtual}
-                        onClose={handleClose}
+
                       />
                     </Modal>
                   </div>
