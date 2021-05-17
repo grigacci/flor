@@ -67,5 +67,26 @@ module.exports = {
                 notification: "Internal server error while trying to delete User",
             });
         }
-    }
+    },
+
+    async getByName(request , response) {
+        try {
+            const nome = request.params;
+            console.warn("Aqui tem o nome:",nome);
+            if (nome === undefined){
+                return response.status(201).json({notification: "Faltou o nome"});
+            }
+            const result = await User.getByFields(nome);
+            console.warn("Nome",result);
+            return response.status(200).json(result);
+        } catch (error) {
+            console.log("Opa", error);
+
+            return response.status(500).json({
+            notification: "Internal server error while trying to delete User"
+        })
+        }
+
+    },
+
 };

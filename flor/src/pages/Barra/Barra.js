@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Barra.css";
-
+import api from "../../services/api";
 import { AppBar, Menu, MenuItem, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, InputBase } from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
 import { IconContext } from "react-icons";
@@ -12,19 +12,31 @@ import { RiAccountPinCircleFill } from "react-icons/ri";
 import { FormText } from "react-bootstrap";
 
 
-
-
 function Barra(props) {
-
     const history = useHistory();
     const [paginaAtual, setPaginaAtual] = useState("/home");
     const [open, setOpen] = useState(false);
-
     const [evento, setEvento] = React.useState(false);
+    const [nome, setNome] = useState();
+    load();
+
+    async function load(){
+        const response = await api.get('/barra');
+        setNome(response.data);
+    }
+
 
     function clicou(pathName) {
         history.push(pathName);
         setPaginaAtual(pathName);
+    }
+
+    function logout(pathName) {
+        history.push(pathName);
+        setPaginaAtual(pathName);
+        sessionStorage.removeItem('@flor/email');
+        sessionStorage.removeItem('@flor-Token');
+        sessionStorage.removeItem('@flor/dados');
     }
 
     function abrirMenu(isOpen) {
@@ -101,8 +113,8 @@ function Barra(props) {
                     <div className="userContainerBarra">
 
                         <FormText className="userNameBarra" onClick={() => history.push("/home")}>
-                            Gilson Roberto Santos
-                                </FormText>
+                        {nome}
+                        </FormText>
 
                         <IconContext.Provider value={{ className: "usuarioBarra" }}>
                             <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
@@ -119,7 +131,7 @@ function Barra(props) {
                             onClose={handleClose}
                         >
                             <MenuItem onClick={() => { clicou("/perfil") }}>Perfil</MenuItem>
-                            <MenuItem onClick={() => { clicou("/login") }}>Logout</MenuItem>
+                            <MenuItem onClick={() => { logout("/login") }}>Logout</MenuItem>
                         </Menu>
                     </div>
 

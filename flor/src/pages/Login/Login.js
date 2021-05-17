@@ -11,13 +11,18 @@ function Login() {
   const history = useHistory();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
+  
   async function handlelogin(e) {
     e.preventDefault();
     try {
       const response = await api.post('/login', {email,  password});
-      alert("Bem vindo",response.data);
       login(response.data.accessToken);
+      const nome = await api.get("/barra");
+      const response2 = await api.get(`/user/${nome.data}`)
+      const teste = response2.data
+      sessionStorage.setItem('@flor/dados', JSON.stringify(teste));
+      sessionStorage.setItem('@flor/email',email);
+      
       history.push("/home");
     } catch (error) {
       if (error.status === 403){

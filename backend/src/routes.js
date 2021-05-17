@@ -14,7 +14,7 @@ const SessionController = require("./controllers/SessionController");
 
 //Sessão
 routes.post("/login", SessionController.signIn);
-
+routes.get("/barra", SessionController.barra)
 
 //Produto
 routes.get("/produto/:produto_id", ProdutoController.getById);
@@ -27,6 +27,7 @@ routes.delete("/produto/:produto_id",ProdutoController.deleteById);
 routes.post("/users",UserValidator.create, UserController.create);
 routes.post("/cadastro",UserValidator.create, UserController.create);
 routes.get("/users/:user_id",UserValidator.getById,auth.authenticateToken, UserController.getById);
+routes.get("/user/:name",UserValidator.getByName,auth.authenticateToken,UserController.getByName);
 routes.put("/users/:user_id",UserValidator.updateById,auth.authenticateToken, UserController.update);
 routes.delete("/users/:user_id",UserValidator.deleteById,auth.authenticateToken, UserController.delete);
 
