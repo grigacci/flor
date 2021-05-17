@@ -53,7 +53,7 @@ function Lista() {
 
 
   function handleClose() {
-    setOpen();
+    setOpen(false);
   }
   return (
     <div className="incluiTodosList" style={{
@@ -177,28 +177,16 @@ function Lista() {
                   </Button>
 
                   <div className="modal">
-                    <Modal 
-                    style={{
-                      display:"flex",
-                       backgroundColor:"grey",
-                       opacity:"70%", 
-                       height: "100%", 
-                       alignItems:"center",
-                       justifyItems:"center",
-                       }} 
-
-                       
-                       open={open} 
-                       onClose={handleClose}
-                       >
-                      <ProdutoModal style={{
-                        display:"flex",
-                        marginLeft:"auto",
-                       alignSelf:"center", 
-                       justifySelf:"center",                      
-                      }}
+                    <Modal
+                    
+                      
+                      className="modalList"
                       open={open}
-                      data={produtoAtual}
+                    >
+                      <ProdutoModal
+                        open={open}
+                        data={produtoAtual}
+                        onClose={handleClose}
                       />
                     </Modal>
                   </div>
