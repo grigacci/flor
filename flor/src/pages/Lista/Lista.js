@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles, Card, Button, Container, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core/';
+import { Backdrop, Modal, makeStyles, Card, Button, Container, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core/';
 import "./Lista.css";
 import { useHistory } from 'react-router';
 import { ButtonToolbar, ButtonGroup, Col, Image, Row } from 'react-bootstrap';
 import api from '../../services/api';
 import ProdutoModal from "../ProdutoModal"
-import Modal from 'react-bootstrap/Modal'
+
 
 
 const useStyles = makeStyles({
+  modalDrop: {
+    background: 'rgba(255,255,255,0.2)',
+  },
   root: { width: "100%", display: "flex", flexDirection: "column", flexGrow: "1", height: "100%" },
 });
 
@@ -21,7 +24,6 @@ function Lista() {
   const classes = useStyles();
   const [produto, setProdutos] = useState(_produtos);
   const [produtoAtual, setProdutoAtual] = useState();
-  const [modalShow, setModalShow] = React.useState(false);
   const [show, setOpen] = useState(false);
   console.log(produtoAtual);
 
@@ -179,16 +181,15 @@ function Lista() {
 
                   <div className="modal">
                     <Modal
-                      centered
                       className="modalList"
-                      show={show}
-                      style={{ display:"flex" ,backgroundImage: "url(/images/fundo.png)" }}
+                      open={show}
+                      style={{ backgroundColor: "unset", backgroundImage: "url(/images/fundo.png)", opacity: "1" }}
+                      BackdropProps={{style: {backgroundImage: "url(/images/fundo.png)", backgroundSize:"cover",opacity:"50%"}}}
                     >
                       <ProdutoModal
-                        show={show}
-                        onHide={handleClose}
+                        open={show}
+                        onClose={handleClose}
                         data={produtoAtual}
-
                       />
                     </Modal>
                   </div>

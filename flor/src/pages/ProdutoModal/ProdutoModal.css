@@ -1,17 +1,22 @@
 .modalContainer {
-    width: 30rem;
-    height: 35rem;
     display: flex;
-    flex-direction: column;
+    width: 35%;
+    height: 95%;
     padding: 20px;
     background-color: #fff;
-    border-radius: 11px;
     align-self:center;
     justify-self: center;
-    justify-items:center;
-    overflow:auto;
+    border-radius:11px;
+
   }
   
+  .overflowModal{
+    display:flex;
+    justify-items:center;
+    flex-direction:column;
+    overflow:auto;
+  }
+
   .produtoModalTitle {
     font-weight: 500;
     text-transform: uppercase;
@@ -19,7 +24,7 @@
     font-size: 1.2rem;
     text-align: center;
     margin-bottom:3px;
-    margin-top:-18px;
+
   }
 
   .linhaHModal{
@@ -34,13 +39,13 @@
     width:45%;
     align-self: center;
     justify-self: center;
-    background-color: rgba(255,255,255,0.0);
 }
 
 .carrinhoModal{
   display:flex;
   align-items: flex-start;
   flex-direction: row;
+  margin-top:10px;
 }
 
 .cancelarModal{
@@ -63,7 +68,15 @@
 .finalModal{
   display:flex;
   flex-direction: column;
-
+  width:100%;
+  position:relative;
+  bottom:0;
+}
+.accordionModal{
+  flex-direction: column;
+  flex-grow:1;
+  align-items: center;
+  justify-content: center;
 }
 
 .comentarioModal{
@@ -71,29 +84,37 @@
     font-size: 0.9rem;
     height: 4rem;
     resize: none;
-    overflow: auto;
     border-radius: 8px;
   }
 
-  @media (max-width:1024px){
-    .modalContainer{
-      width:40rem;
-      height:47rem;
-    }
-    .finalModal{
-      margin-top:auto;
-    }
-    .accordionModal{
-      margin-top:4rem;
-    }
+@media (max-width:1366px){
+  .modalContainer{
+    width:35%;
+    height:98.5%;
   }
+}
+@media (max-width:1024px){
+  .modalContainer{
+    width:80%;
+    height:80%;
+  }
+  .imgModal{
+    width:60%
+  }
+  .accordionModal{
+    margin-top:3rem;
+  }
+}
+@media(max-width:540px){
+  .modalContainer{
+    width:70%;
+    height:95%
+  }
+}
+@media (max-width:414px){
+  .modalContainer{
+    width:90%;
+    height:98.5%;
+  }
+}
 
-  @media (max-width:414px){
-    .modalContainer{
-      width:100%;
-      height:100%;
-    }
-    .accordionModal{
-      margin-top:0;
-    }
-  }
