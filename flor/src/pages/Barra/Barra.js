@@ -13,12 +13,21 @@ import { FormText } from "react-bootstrap";
 
 
 function Barra(props) {
-
     const history = useHistory();
     const [paginaAtual, setPaginaAtual] = useState("/home");
     const [open, setOpen] = useState(false);
 
     const [evento, setEvento] = React.useState(false);
+    let nome;
+    const dados = JSON.parse(sessionStorage.getItem('@flor/dados'));
+
+    if (dados){
+    nome = dados.name;
+    }
+    else
+    {
+        nome = "Visitante"
+    }
 
     function clicou(pathName) {
         history.push(pathName);
@@ -107,7 +116,7 @@ function Barra(props) {
                     <div className="userContainerBarra">
 
                         <FormText className="userNameBarra" onClick={() => history.push("/home")}>
-                            Gilson Roberto Santos
+                            {nome}
                                 </FormText>
 
                         <IconContext.Provider value={{ className: "usuarioBarra" }}>
