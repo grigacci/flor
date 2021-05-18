@@ -68,10 +68,6 @@ function Lista() {
         src="./images/namorados.png"
         alt="promomaio"
       />
-      <div className="tituloList">
-        <h1>Presenteie quem você ama!</h1>
-        <h3>Aproveite as promoções do mês</h3>
-      </div>
       <Container style={{
         width: "100%",
         display: "flex",
@@ -84,60 +80,11 @@ function Lista() {
       }}
       >
 
-        <Row className="promoçõesList" >
-          <Col className="bolinhasList">
-            <Image
-              src="/images/2.png"
-              onClick={() => history.push("/home")}
-              roundedCircle
-              style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
-            /><h5>preço1</h5>
-          </Col>
-          <Col className="bolinhasList">
-            <Image
-              src="/images/3.png"
-              onClick={() => history.push("/home")}
-              roundedCircle
-              style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
-            /><h5>preço1</h5>
-          </Col>
-          <Col className="bolinhasList">
-            <Image
-              src="/images/4.png"
-              onClick={() => history.push("/home")}
-              roundedCircle
-              style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
-            /><h5>preço1</h5>
-          </Col>
-          <Col className="bolinhasList">
-            <Image
-              src="/images/5.png"
-              onClick={() => history.push("/home")}
-              roundedCircle
-              style={{ width: "10rem", height: "10rem", alignSelf: "center" }}
-            /><h5>preço1</h5>
-          </Col>
-        </Row>
+        
 
       </Container>
       <div className="geralList">
-        <Card style={{
-          margin: "1rem",
-          marginBottom: "auto",
-          overflow: "unset",
-          backgroundColor: "#e9e9e9",
-        }}
-        >
-          <div className="categoriasList">
-            <p style={{ marginBottom: "8px", fontFamily: "Abhaya Libre Regular" }}>Como você vai fazer alguém feliz hoje?</p>
-            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Cestas</Button>
-            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Buquês</Button>
-            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Sementes</Button>
-            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Jardinagem</Button>
-            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Coroa de Flores</Button>
-            <Button style={{ fontSize: "0.7rem", fontFamily: "Abhaya Libre Regular" }} onClick={() => history.push("/home")}>Vaso de Flores</Button>
-          </div>
-        </Card>
+
 
         <div className="baseList">
           <div className="elementosList">
@@ -183,8 +130,8 @@ function Lista() {
                     <Modal
                       className="modalList"
                       open={show}
-                      style={{ backgroundColor: "unset", backgroundImage: "url(/images/fundo.png)", opacity: "1" }}
-                      BackdropProps={{style: {backgroundImage: "url(/images/fundo.png)", backgroundSize:"cover",opacity:"50%"}}}
+                      style={{opacity: "1" }}
+                      BackdropProps={{style: {backgroundColor: "rgba(0, 0, 0, 0"}}}
                     >
                       <ProdutoModal
                         open={show}
@@ -200,23 +147,11 @@ function Lista() {
           </div>
         </div>
       </div>
-
-      <div className="proxPaginaList">
-        <ButtonToolbar aria-label="Toolbar with button groups" style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-        }}
-        >
-          <ButtonGroup className="mr-2List" aria-label="Second group">
-            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>Página Anterior</Button>
-            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>1</Button>
-            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>2</Button>
-            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>3</Button>
-            <Button style={{ fontSize: "0.7rem", marginBottom: "2px", fontFamily: "Abhaya Libre Regular" }}>Próxima Página</Button>
-          </ButtonGroup>
-        </ButtonToolbar>
-      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </div >
   );
 }

@@ -86,6 +86,16 @@
     resize: none;
     border-radius: 8px;
   }
+  @media (min-width:1900px){
+    .modalContainer{
+      width:35%;
+      height:98.5%;
+    }
+    .accordionModal{
+      margin-top:3rem;
+    }
+  }
+
 
 @media (max-width:1366px){
   .modalContainer{
