@@ -16,7 +16,7 @@ const Accordion = withStyles({
             borderBottom: 0,
         },
         '&:before': {
-            display: 'none',
+            display: 'flex',
         },
         '&$expanded': {
             margin: 'auto',
@@ -53,103 +53,104 @@ const AccordionDetails = withStyles((theme) => ({
       <h1>antes</h1>:<h1>depois</h1> */
 
 
-function ProdutoModal({ data, show, onHide }) {
+function ProdutoModal({ data, open, onClose }) {
     const [expanded, setExpanded] = React.useState();
 
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
 
-    if (!show) return
+    if (!open) return
     console.log(data);
     let nome = `/images/${data.produto_id}.jpg`;
     return (
 
         <div className="modalContainer">
+            <div className="overflowModal">
+                <p className="produtoModalTitle">
+                    {data.name}
+                </p>
 
-            <p className="produtoModalTitle">
-                {data.name}
-            </p>
+                <div className="linhaHModal" />
 
-            <div className="linhaHModal" />
+                <img src={nome} className="imgModal"></img>
 
-            <img src={nome} className="imgModal"></img>
+                <div className="carrinhoModal">
+                    <p className="produtoModalTitle" style={{ alignSelf: "flex-start", marginTop: "0" }}>R${data.preco}</p>
 
-            <div className="carrinhoModal">
-                <p className="produtoModalTitle" style={{ alignSelf: "flex-start", marginTop: "0" }}>R${data.preco}</p>
-
-                <Button variant="contained" color="primary" style={{
-                    marginLeft: "auto",
-                    borderColor: "transparent",
-                    textTransform: "none",
-                    backgroundColor: "#3483fa",
-                    color: "#fff",
-                    marginBottom: "3px"
-                }}>
-                    Adicionar ao carrinho
-                </Button>
-            </div>
-
-            <div className="accordionModal">
-                <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
-                        <Typography>Descrição do produto</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography>
-                            {data.descricao}
-                        </Typography>
-                    </AccordionDetails>
-                </Accordion>
-
-                <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-                    <AccordionSummary aria-controls="panel2d-content" id="panel2d-header" expandIcon={<ExpandMoreIcon />}>
-                        <Typography>Conteúdo</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography>
-                            {data.contem}
-                        </Typography>
-                    </AccordionDetails>
-                </Accordion>
-                <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-                    <AccordionSummary aria-controls="panel3d-content" id="panel3d-header" expandIcon={<ExpandMoreIcon />}>
-                        <Typography>Comentários dos nossos clientes</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography>
-                            <textarea></textarea>
-                        </Typography>
-                    </AccordionDetails>
-                </Accordion>
-            </div>
-            <div className="finalModal">
-                <p className="textModal">Nos conte o que achou do produto!</p>
-                <textarea
-                    className="comentarioModal"
-                />
-                <div className="buttonsRow">
-                    <Button onClick={onHide} style={{
-                        marginTop: "10px",
-                        marginRight: "auto",
-                        textTransform: "none",
-                        backgroundColor: "rgba(65,137,230,.15)",
-                        color: "#3483fa",
-                    }}>
-                        Voltar Página
-                </Button>
                     <Button variant="contained" color="primary" style={{
-                        marginTop: "10px",
                         marginLeft: "auto",
+                        borderColor: "transparent",
                         textTransform: "none",
                         backgroundColor: "#3483fa",
                         color: "#fff",
+                        marginBottom: "3px"
                     }}>
-                        Enviar Comentário
+                        Adicionar ao carrinho
                 </Button>
+                </div>
+
+                <div className="accordionModal">
+                    <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Descrição do produto</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                {data.descricao}
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+
+                    <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header" expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Conteúdo</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                {data.contem}
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header" expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Comentários dos nossos clientes</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                <textarea></textarea>
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                </div>
+                <div className="finalModal">
+                    <p className="textModal">Nos conte o que achou do produto!</p>
+                    <textarea
+                        className="comentarioModal"
+                    />
+                    <div className="buttonsRow">
+                        <Button onClick={onClose} style={{
+                            marginTop: "10px",
+                            marginRight: "auto",
+                            textTransform: "none",
+                            backgroundColor: "rgba(65,137,230,.15)",
+                            color: "#3483fa",
+                        }}>
+                            Voltar Página
+                </Button>
+                        <Button variant="contained" color="primary" style={{
+                            marginTop: "10px",
+                            marginLeft: "auto",
+                            textTransform: "none",
+                            backgroundColor: "#3483fa",
+                            color: "#fff",
+                        }}>
+                            Enviar Comentário
+                </Button>
+                    </div>
+                </div>
             </div>
-                
-            </div>
+
         </div>
     );
 }
