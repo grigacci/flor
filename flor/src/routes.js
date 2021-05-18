@@ -8,7 +8,6 @@ import Lista from "./pages/Lista";
 import Livre from "./pages/Livre";
 import Perfil from "./pages/Perfil";
 import Footer from "./pages/Footer";
-import Produto from "./pages/Produto";
 import { isAuthenticated } from "./services/auth";
 
 const PrivateRoute = ({component: Component, ...rest}) => {
@@ -28,7 +27,6 @@ function Routes() {
                 <Route exact path="/temp" component={Home} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/cadastro" component={Cadastro} />
-                <Route exact path="/produto" component={Produto} />
                 <Route path="/" component={UserMenu} />
             </Switch>
         </BrowserRouter>
