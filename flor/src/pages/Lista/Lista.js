@@ -130,6 +130,7 @@ function Lista() {
                     <Modal
                       className="modalList"
                       open={show}
+                      onClose={handleClose}
                       style={{opacity: "1" }}
                       BackdropProps={{style: {backgroundColor: "rgba(0, 0, 0, 0"}}}
                     >
