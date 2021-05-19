@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Produto.css";
-import { Modal, Card, Button, Container, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core/';
+import { Modal, Card, Button, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core/';
 import api from '../../../services/api';
 import { makeStyles } from '@material-ui/core/styles';
 import ProdutoModal from "../ProdutoModal"

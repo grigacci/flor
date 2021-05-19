@@ -32,6 +32,7 @@ function Barra(props) {
     function clicou(pathName) {
         history.push(pathName);
         setPaginaAtual(pathName);
+        
     }
   
       function logout(pathName) {
@@ -151,6 +152,8 @@ function Barra(props) {
                                 selected={paginaAtual === listItem.pathName}
                                 onClick={() => {
                                     clicou(listItem.pathName);
+                                    setOpen(false);
+                                    
                                 }}
                             >
                                 <IconContext.Provider value={{ size: listItem.Size }}>
