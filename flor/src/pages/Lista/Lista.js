@@ -4,7 +4,7 @@ import "./Lista.css";
 import { useHistory } from 'react-router';
 import { ButtonToolbar, ButtonGroup, Col, Image, Row } from 'react-bootstrap';
 import api from '../../services/api';
-import ProdutoModal from "../ProdutoModal"
+import Produto from "../components/Produto"
 
 
 
@@ -80,74 +80,13 @@ function Lista() {
       }}
       >
 
-        
+
 
       </Container>
       <div className="geralList">
-
-
-        <div className="baseList">
-          <div className="elementosList">
-            {produto.map((listItem, index) => {
-              var nome = `/images/${listItem.produto_id}.jpg`;
-              return (
-                <>
-                  <Button key={index} onClick={() => handleClick(listItem)}>
-                    <div className="boxListProd" >
-                      <Card className={classes.root} >
-                        <CardActionArea style={{ display: "flex", flexDirection: "column", flexGrow: "1" }} >
-                          <CardMedia
-                            component="img"
-                            alt={listItem.name}
-                            height="160"
-                            image={nome}
-                            title={listItem.name}
-                            style={{ width: "auto", alignSelf: "center" }}
-                          />
-                          <CardContent style={{ display: "flex", flexDirection: "column", flexGrow: "1" }}>
-                            <Typography gutterBottom style={{
-                              fontSize: "1.16rem",
-                              fontFamily: "Roboto",
-                              fontWeight: "400",
-                              lineHeight: "1.334",
-                              letterSpacing: "0em",
-                            }}>
-                              {listItem.name}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                              {listItem.descrição}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p" style={{ alignSelf: "center", marginTop: "auto" }}>
-                              R${listItem.preco}
-                            </Typography>
-                          </CardContent>
-                        </CardActionArea>
-                      </Card>
-                    </div>
-                  </Button>
-
-                  <div className="modal">
-                    <Modal
-                      className="modalList"
-                      open={show}
-                      onClose={handleClose}
-                      style={{opacity: "1" }}
-                      BackdropProps={{style: {backgroundColor: "rgba(0, 0, 0, 0"}}}
-                    >
-                      <ProdutoModal
-                        open={show}
-                        onClose={handleClose}
-                        data={produtoAtual}
-                      />
-                    </Modal>
-                  </div>
-
-                </>
-              );
-            })}
-          </div>
-        </div>
+        <Produto />
       </div>
+      
       <br></br>
       <br></br>
       <br></br>

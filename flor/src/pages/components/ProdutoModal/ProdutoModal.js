@@ -16,7 +16,7 @@ const Accordion = withStyles({
             borderBottom: 0,
         },
         '&:before': {
-            display: 'flex',
+            display: 'none',
         },
         '&$expanded': {
             margin: 'auto',
@@ -90,7 +90,7 @@ function ProdutoModal({ data, open, onClose }) {
                 </Button>
                 </div>
 
-                <div className="accordionModal">
+
                     <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
                             <Typography>Descrição do produto</Typography>
@@ -122,7 +122,7 @@ function ProdutoModal({ data, open, onClose }) {
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                </div>
+
                 <div className="finalModal">
                     <p className="textModal">Nos conte o que achou do produto!</p>
                     <textarea
