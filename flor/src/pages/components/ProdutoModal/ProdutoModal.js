@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, Typography } from "@material-ui/core";
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
@@ -6,6 +6,7 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import { withStyles } from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "./ProdutoModal.css";
+import {Form , Col } from "react-bootstrap"
 
 
 const Accordion = withStyles({
@@ -55,10 +56,18 @@ const AccordionDetails = withStyles((theme) => ({
 
 function ProdutoModal({ data, open, onClose }) {
     const [expanded, setExpanded] = React.useState();
-
+    const [n,seTn] = useState(1);
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
+
+    function handleCar() {
+        var z = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
+        let prod = data.produto_id;
+        let x = [{ item : prod,quantidade : n}];
+
+        sessionStorage.setItem('@flor/carrinho',JSON.stringify(x));
+    }
 
     if (!open) return
     console.log(data);
@@ -75,10 +84,42 @@ function ProdutoModal({ data, open, onClose }) {
 
                 <img src={nome} className="imgModal"></img>
 
-                <div className="carrinhoModal">
-                    <p className="produtoModalTitle" style={{ alignSelf: "flex-start", marginTop: "0" }}>R${data.preco}</p>
+ 
 
-                    <Button variant="contained" color="primary" style={{
+                <div className="carrinhoModal">
+                    
+                    <p className="produtoModalTitle" style={{ alignSelf: "flex-start", marginTop: "0" }}>R${data.preco * n}</p>
+
+ 
+                    <Form>
+  <Form.Row className="align-items-center">
+    <Col xs="auto" className="my-1">
+      <Form.Label className="mr-sm-2" htmlFor="inlineFormCustomSelect" srOnly>
+        Quantidade
+      </Form.Label>
+      <Form.Control
+        as="select"
+        className="mr-sm-4"
+        id="inlineFormCustomSelect"
+        onChange={(e) => seTn(e.target.value)}
+        custom>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </Form.Control>
+
+    </Col>
+  </Form.Row>
+</Form>
+   
+
+                    <Button variant="contained" onClick={handleCar} color="primary" style={{
                         marginLeft: "auto",
                         borderColor: "transparent",
                         textTransform: "none",
@@ -88,6 +129,7 @@ function ProdutoModal({ data, open, onClose }) {
                     }}>
                         Adicionar ao carrinho
                 </Button>
+                
                 </div>
 
 
