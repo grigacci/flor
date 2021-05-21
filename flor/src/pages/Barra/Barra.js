@@ -153,7 +153,6 @@ function Barra(props) {
                                 onClick={() => {
                                     clicou(listItem.pathName);
                                     setOpen(false);
-                                    
                                 }}
                             >
                                 <IconContext.Provider value={{ size: listItem.Size }}>

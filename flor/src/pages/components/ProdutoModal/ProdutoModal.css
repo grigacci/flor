@@ -1,12 +1,13 @@
 .modalContainer {
-    display: flex;
-    width: 35%;
-    height: 95%;
-    padding: 20px;
-    background-color: #fff;
-    align-self:center;
-    justify-self: center;
-    border-radius:11px;
+  display: flex;
+  width: 35%;
+  height: 95%;
+  padding: 20px;
+  background-color: #fff;
+  align-self:center;
+  justify-self: center;
+  border-radius:11px;
+
 
   }
   
@@ -18,113 +19,116 @@
     overflow:auto;
   }
 
-  .produtoModalTitle {
-    font-weight: 500;
-    text-transform: uppercase;
-    align-self:center;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom:3px;
 
-  }
+.overflowModal{
+  display:flex;
+  justify-items:center;
+  flex-direction:column;
 
-  .linhaHModal{
-    width: 28rem;
-    border:1px solid;
-    align-self: center;
-    color:rgba(214, 213, 213, 0.63);
-  }
-  
+  overflow:auto;
+}
+
+.produtoModalTitle {
+  font-weight: 500;
+  text-transform: uppercase;
+  align-self:center;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom:3px;
+
+}
+
+.linhaHModal{
+  width: 28rem;
+  border:1px solid;
+  align-self: center;
+  color:rgba(214, 213, 213, 0.63);
+}
+
 .imgModal{
-    display:flex;
-    width:45%;
-    align-self: center;
-    justify-self: center;
+  display:flex;
+  width:45%;
+  align-self: center;
+  justify-self: center;
 }
 
 .carrinhoModal{
-  display:flex;
-  align-items: flex-start;
-  flex-direction: row;
-  margin-top:10px;
+display:flex;
+align-items: flex-start;
+flex-direction: row;
+margin-top:10px;
 }
 
 .cancelarModal{
-  
-  border-color: transparent;
-  background-color: rgba(65,137,230,.15);
-  color: #3483fa;
+
+border-color: transparent;
+background-color: rgba(65,137,230,.15);
+color: #3483fa;
 
 }
 .textModal{
-  font-size: 1.08rem;
-  margin-bottom: 0;
+font-size: 1.08rem;
+margin-bottom: 0;
 }
 
 .buttonsRowProduto {
-  display: flex;
-  justify-content: space-between; 
- margin-top: auto;
- 
- 
-
+display: flex;
+justify-content: space-between; 
+margin-top: auto;
 }
 
 .finalModal{
-  display:flex;
-  flex-direction: column;
-  width:100%;
-  margin-bottom: 10px;
-  
-  
+display:flex;
+flex-direction: column;
+width:100%;
+margin-bottom: 10px;
 }
 
 .comentarioModal{
-    font-weight: 300;
-    font-size: 0.9rem;
-    height: 4rem;
-    resize: none;
-    border-radius: 8px;
-  }
-  @media (min-width:1900px){
-    .modalContainer{
-      width:35%;
-      height:98.5%;
-    }
-    .accordionModal{
-      margin-top:3rem;
-    }
-  }
-
-
-@media (max-width:1366px){
+  font-weight: 300;
+  font-size: 0.9rem;
+  height: 4rem;
+  resize: none;
+  border-radius: 8px;
+}
+@media (min-width:1900px){
   .modalContainer{
     width:35%;
     height:98.5%;
-  }
-}
-@media (max-width:1024px){
-  .modalContainer{
-    width:80%;
-    height:80%;
-  }
-  .imgModal{
-    width:60%
   }
   .accordionModal{
     margin-top:3rem;
   }
 }
+
+
+@media (max-width:1366px){
+.modalContainer{
+  width:35%;
+  height:98.5%;
+}
+}
+@media (max-width:1024px){
+.modalContainer{
+  width:80%;
+  height:80%;
+}
+.imgModal{
+  width:60%
+}
+.accordionModal{
+  margin-top:3rem;
+}
+}
 @media(max-width:540px){
-  .modalContainer{
-    width:70%;
-    height:95%
-  }
+.modalContainer{
+  width:70%;
+  height:95%
+}
 }
 @media (max-width:414px){
-  .modalContainer{
-    width:90%;
-    height:98.5%;
-  }
+.modalContainer{
+  width:90%;
+  height:98.5%;
 }
-
+}
