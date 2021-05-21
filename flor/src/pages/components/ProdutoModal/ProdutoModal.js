@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Typography } from "@material-ui/core";
+import { Button, Card, Typography } from "@material-ui/core";
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
@@ -65,7 +65,7 @@ function ProdutoModal({ data, open, onClose }) {
     let nome = `/images/${data.produto_id}.jpg`;
     return (
 
-        <div className="modalContainer">
+        <Card className="modalContainer">
             <div className="overflowModal">
                 <p className="produtoModalTitle">
                     {data.name}
@@ -73,7 +73,7 @@ function ProdutoModal({ data, open, onClose }) {
 
                 <div className="linhaHModal" />
 
-                <img src={nome} className="imgModal"></img>
+                <img src={nome} className="imgModal" alt="name"></img>
 
                 <div className="carrinhoModal">
                     <p className="produtoModalTitle" style={{ alignSelf: "flex-start", marginTop: "0" }}>R${data.preco}</p>
@@ -128,9 +128,10 @@ function ProdutoModal({ data, open, onClose }) {
                     <textarea
                         className="comentarioModal"
                     />
-                    <div className="buttonsRow">
+                    </div>
+                    <div className="buttonsRowProduto">
                         <Button onClick={onClose} style={{
-                            marginTop: "10px",
+                            
                             marginRight: "auto",
                             textTransform: "none",
                             backgroundColor: "rgba(65,137,230,.15)",
@@ -139,7 +140,7 @@ function ProdutoModal({ data, open, onClose }) {
                             Voltar Página
                 </Button>
                         <Button variant="contained" color="primary" style={{
-                            marginTop: "10px",
+                            
                             marginLeft: "auto",
                             textTransform: "none",
                             backgroundColor: "#3483fa",
@@ -147,11 +148,11 @@ function ProdutoModal({ data, open, onClose }) {
                         }}>
                             Enviar Comentário
                 </Button>
-                    </div>
+                    
                 </div>
             </div>
 
-        </div>
+        </Card>
     );
 }
 
