@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
-import {  Button, Modal } from "@material-ui/core";
+import { Button, Modal } from "@material-ui/core";
 
 function Home( ) {
   const [show, setOpen] = useState(false);
@@ -170,63 +170,67 @@ function Home( ) {
           </Carousel.Item>
         </Carousel>
       </div>
-      
+
+
       <div className="modal1">
-      
-      <card
-      className="botaoComentario" >
-            <button className="botaoComentario"onClick={()=>setOpen(true)}>
-              <h4 >DEIXE SEU COMENTÁRIO&gt;</h4>
-            </button>
-          </card>
-         
-          
+
+        <card
+          className="botaoComentario" >
+          <button className="botaoComentario" onClick={() => setOpen(true)}>
+            <h4 >DEIXE SEU COMENTÁRIO&gt;</h4>
+          </button>
+        </card>
+
+
         <Modal
           className="modalList"
-         
+
+
           open={show}
           onClose={handleClose}
           style={{ opacity: "1" }}
           BackdropProps={{ style: { backgroundColor: "rgba(0, 0, 0, 0" } }}
         >
-         <Card className="CardComentarioHome">
-           <h3 style={{alignSelf:"center"}}>Deixe Sua opinião</h3>
-           <textarea 
-           style={{height:"70%"}}
-           className="inputCard">
-           </textarea>
-           <div className="buttonsRowHome">
-                        <Button onClick={handleClose} style={{
-                            marginBlock:"10px",
-                            marginRight: "auto",
-                            marginLeft:"5px",
-                            textTransform: "none",
-                            backgroundColor: "#f3dc01",
-                            textShadow:"0.5px 0.5px gray",
-                            color: "black",
-                        }}>
-                            Voltar Página
+
+          <Card className="CardComentarioHome">
+            <h3 style={{ alignSelf: "center" }}>Deixe Sua opinião</h3>
+            <textarea
+              style={{ height: "70%" }}
+              className="inputCard">
+            </textarea>
+            <div className="buttonsRowHome">
+              <Button onClick={handleClose} style={{
+                marginBlock: "10px",
+                marginRight: "auto",
+                marginLeft: "5px",
+                textTransform: "none",
+                backgroundColor: "#f3dc01",
+                textShadow: "0.5px 0.5px gray",
+                color: "black",
+              }}>
+                Voltar Página
                 </Button>
-                        <Button  onClick={handleCloseComentario}  variant="contained" color="primary" style={{
-                            
-                        
-                           
-                            marginLeft: "auto",
-                            marginBlock:"10px",
-                            marginRight:"5px",
-                            textTransform: "none",
-                            backgroundColor: "#f3dc01",
-                            textShadow:"0.5px 0.5px gray",
-                            color: "black",
-                        }}>
-                         
-                          
-                            Enviar Comentário
+              <Button onClick={handleCloseComentario} variant="contained" color="primary" style={{
+
+
+
+                marginLeft: "auto",
+                marginBlock: "10px",
+                marginRight: "5px",
+                textTransform: "none",
+                backgroundColor: "#f3dc01",
+                textShadow: "0.5px 0.5px gray",
+                color: "black",
+              }}>
+
+
+                Enviar Comentário
                 </Button>
-                    </div>
-         </Card>
-         
-        
+            </div>
+          </Card>
+
+
+
         </Modal>
       </div>
 
