@@ -34,6 +34,11 @@
     align-items: center;
     background-color: #f3dc01;
 }
+.carrinhoproduto{
+    display: flex;
+    flex-direction:column;
+    align-self: flex-end;
+}
 
 .userNameBarra{
     margin: 0;
