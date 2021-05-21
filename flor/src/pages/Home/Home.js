@@ -4,7 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 import { Button, Modal } from "@material-ui/core";
 
-function Home() {
+function Home( ) {
   const [show, setOpen] = useState(false);
   function handleClose() {
     setOpen(false);
@@ -21,7 +21,7 @@ function Home() {
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/LOGOCARROSSEL.png"
+              src="./images/primeirahome.png"
               alt="First slide"
             />
           </Carousel.Item>
@@ -104,21 +104,21 @@ function Home() {
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios1.png"
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios2.png"
               alt="Second slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios5.png"
               alt="Third slide"
             />
           </Carousel.Item>
@@ -127,21 +127,21 @@ function Home() {
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios3.png"
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios6.png"
               alt="Second slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios7.png"
               alt="Third slide"
             />
           </Carousel.Item>
@@ -150,26 +150,27 @@ function Home() {
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios4.png"
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios9.png"
               alt="Second slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="imagehome"
-              src="./images/comentários.png"
+              src="./images/comentarios8.png"
               alt="Third slide"
             />
           </Carousel.Item>
         </Carousel>
       </div>
+
 
       <div className="modal1">
 
@@ -184,11 +185,13 @@ function Home() {
         <Modal
           className="modalList"
 
+
           open={show}
           onClose={handleClose}
           style={{ opacity: "1" }}
           BackdropProps={{ style: { backgroundColor: "rgba(0, 0, 0, 0" } }}
         >
+
           <Card className="CardComentarioHome">
             <h3 style={{ alignSelf: "center" }}>Deixe Sua opinião</h3>
             <textarea
@@ -225,6 +228,7 @@ function Home() {
                 </Button>
             </div>
           </Card>
+
 
 
         </Modal>

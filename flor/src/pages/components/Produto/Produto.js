@@ -47,8 +47,8 @@ function Produto() {
   }
   function onChange(value) {
     setType(value);
-
   }
+
 
   return (
     <div className="countainerProd" >

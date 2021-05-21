@@ -32,6 +32,7 @@ function Barra(props) {
     function clicou(pathName) {
         history.push(pathName);
         setPaginaAtual(pathName);
+        
     }
   
       function logout(pathName) {

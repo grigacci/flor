@@ -19,7 +19,7 @@ const _produtos = []
 
 
 function Lista() {
-
+  
   const history = useHistory();
   const classes = useStyles();
   const [produto, setProdutos] = useState(_produtos);
