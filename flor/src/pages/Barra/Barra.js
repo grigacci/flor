@@ -9,33 +9,38 @@ import { GiSpotedFlower, GiRake } from "react-icons/gi";
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { FiMenu } from "react-icons/fi"
 import { RiAccountPinCircleFill } from "react-icons/ri";
-import { FormText } from "react-bootstrap";
+import { FormText, Dropdown } from "react-bootstrap";
 
 
 function Barra(props) {
     const history = useHistory();
     const [paginaAtual, setPaginaAtual] = useState("/home");
     const [open, setOpen] = useState(false);
-
+    const [abrir, setAbrir] = useState(false);
     const [evento, setEvento] = React.useState(false);
     let nome;
     const dados = JSON.parse(sessionStorage.getItem('@flor/dados'));
 
-    if (dados){
-    nome = dados.name;
+    if (dados) {
+        nome = dados.name;
     }
-    else
-    {
+    else {
         nome = "Visitante"
+    }
+    function abrirCarrinho(e) {
+        setAbrir(e.currentTarget);
+    }
+    function fecharCarrinho(){
+        setAbrir(false)
     }
 
     function clicou(pathName) {
         history.push(pathName);
         setPaginaAtual(pathName);
-        
+
     }
-  
-      function logout(pathName) {
+
+    function logout(pathName) {
         history.push(pathName);
         setPaginaAtual(pathName);
         sessionStorage.removeItem('@flor/email');
@@ -79,7 +84,7 @@ function Barra(props) {
     return (
         <div>
             <AppBar position="static">
-                
+
                 <Toolbar style={{ backgroundColor: "#f3dc01" }}>
 
                     <IconButton
@@ -90,7 +95,7 @@ function Barra(props) {
                         <FiMenu />
                     </IconButton>
 
-                    <img className="logoBarra" alt="Logo" onClick={()=> clicou("home")} src="/images/nome_horizontal.png" />
+                    <img className="logoBarra" alt="Logo" onClick={() => clicou("home")} src="/images/nome_horizontal.png" />
 
 
                     <div className="pesquisaBarra">
@@ -102,23 +107,34 @@ function Barra(props) {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-
-
+                    
+                    <div>
                     <IconContext.Provider value={{ size: "1.5rem", className: "carrinhoBarra" }}>
-                        <div>
-                            <IconButton>
+                       
+                            <IconButton onClick={abrirCarrinho} aria-controls="simple-produto" aria-haspopup="true">
+
                                 <AiOutlineShoppingCart />
                             </IconButton>
-                        </div>
+
+                            <Menu
+                                id="simple-produto"
+                                anchorEl={abrir}
+                                keepMounted
+                                open={Boolean(abrir)}
+                                onClose={fecharCarrinho}
+                                className="carrinhoproduto"
+                            >
+                              <MenuItem onClick={() => { clicou("/Lista") }}>Produtos</MenuItem>
+
+                            </Menu>
                     </IconContext.Provider>
-
-
+                    </div>
 
                     <div className="userContainerBarra">
 
                         <FormText className="userNameBarra" onClick={() => history.push("/home")}>
                             {nome}
-                                </FormText>
+                        </FormText>
 
                         <IconContext.Provider value={{ className: "usuarioBarra" }}>
                             <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
@@ -153,7 +169,7 @@ function Barra(props) {
                                 onClick={() => {
                                     clicou(listItem.pathName);
                                     setOpen(false);
-                                    
+
                                 }}
                             >
                                 <IconContext.Provider value={{ size: listItem.Size }}>
