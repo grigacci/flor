@@ -68,7 +68,7 @@ function ProdutoModal({ data, open, onClose }) {
     }
 
     if (!open) return
-    console.log(data);
+
     let nome = `/images/${data.produto_id}.jpg`;
     return (
 

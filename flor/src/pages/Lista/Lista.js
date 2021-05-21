@@ -25,7 +25,7 @@ function Lista() {
   const [produto, setProdutos] = useState(_produtos);
   const [produtoAtual, setProdutoAtual] = useState();
   const [show, setOpen] = useState(false);
-  console.log(produtoAtual);
+
 
 
   async function getProdutos() {
@@ -49,7 +49,6 @@ function Lista() {
 
   function teste() {
     if (show === true) {
-      console.log(produtoAtual.name);
       return produtoAtual.name;
     }
   }
