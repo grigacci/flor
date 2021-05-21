@@ -3,8 +3,17 @@ import Routes from "./routes";
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+
+setTimeout(
+  App, 2000);
+function App() {  
+
+
   return <Routes />
+  
+
+
+ 
 }
 
 export default App;
