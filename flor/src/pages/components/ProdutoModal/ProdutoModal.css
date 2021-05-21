@@ -14,6 +14,7 @@
     display:flex;
     justify-items:center;
     flex-direction:column;
+
     overflow:auto;
   }
 
@@ -57,20 +58,25 @@
 }
 .textModal{
   font-size: 1.08rem;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
-.buttonsRow {
-    display: flex;
-    justify-content: space-between;  
+.buttonsRowProduto {
+  display: flex;
+  justify-content: space-between; 
+ margin-top: auto;
+ 
+ 
+
 }
 
 .finalModal{
   display:flex;
   flex-direction: column;
   width:100%;
-  position:relative;
-  bottom:0;
+  margin-bottom: 10px;
+  
+  
 }
 
 .comentarioModal{

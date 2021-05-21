@@ -1,11 +1,14 @@
-import React from "react";
-import { Button, Typography } from "@material-ui/core";
+
+import React, {useState} from "react";
+import { Button, Typography,Card } from "@material-ui/core";
+
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import { withStyles } from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "./ProdutoModal.css";
+import {Form , Col } from "react-bootstrap"
 
 
 const Accordion = withStyles({
@@ -55,17 +58,25 @@ const AccordionDetails = withStyles((theme) => ({
 
 function ProdutoModal({ data, open, onClose }) {
     const [expanded, setExpanded] = React.useState();
-
+    const [n,seTn] = useState(1);
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
+
+    function handleCar() {
+        var z = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
+        let prod = data.produto_id;
+        let x = [{ item : prod,quantidade : n}];
+
+        sessionStorage.setItem('@flor/carrinho',JSON.stringify(x));
+    }
 
     if (!open) return
     console.log(data);
     let nome = `/images/${data.produto_id}.jpg`;
     return (
 
-        <div className="modalContainer">
+        <Card className="modalContainer">
             <div className="overflowModal">
                 <p className="produtoModalTitle">
                     {data.name}
@@ -73,12 +84,44 @@ function ProdutoModal({ data, open, onClose }) {
 
                 <div className="linhaHModal" />
 
-                <img src={nome} className="imgModal"></img>
+                <img src={nome} className="imgModal" alt="name"></img>
+
+ 
 
                 <div className="carrinhoModal">
-                    <p className="produtoModalTitle" style={{ alignSelf: "flex-start", marginTop: "0" }}>R${data.preco}</p>
+                    
+                    <p className="produtoModalTitle" style={{ alignSelf: "flex-start", marginTop: "0" }}>R${data.preco * n}</p>
 
-                    <Button variant="contained" color="primary" style={{
+ 
+                    <Form>
+  <Form.Row className="align-items-center">
+    <Col xs="auto" className="my-1">
+      <Form.Label className="mr-sm-2" htmlFor="inlineFormCustomSelect" srOnly>
+        Quantidade
+      </Form.Label>
+      <Form.Control
+        as="select"
+        className="mr-sm-4"
+        id="inlineFormCustomSelect"
+        onChange={(e) => seTn(e.target.value)}
+        custom>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </Form.Control>
+
+    </Col>
+  </Form.Row>
+</Form>
+   
+
+                    <Button variant="contained" onClick={handleCar} color="primary" style={{
                         marginLeft: "auto",
                         borderColor: "transparent",
                         textTransform: "none",
@@ -88,6 +131,7 @@ function ProdutoModal({ data, open, onClose }) {
                     }}>
                         Adicionar ao carrinho
                 </Button>
+                
                 </div>
 
 
@@ -128,9 +172,10 @@ function ProdutoModal({ data, open, onClose }) {
                     <textarea
                         className="comentarioModal"
                     />
-                    <div className="buttonsRow">
+                    </div>
+                    <div className="buttonsRowProduto">
                         <Button onClick={onClose} style={{
-                            marginTop: "10px",
+                            
                             marginRight: "auto",
                             textTransform: "none",
                             backgroundColor: "rgba(65,137,230,.15)",
@@ -139,7 +184,7 @@ function ProdutoModal({ data, open, onClose }) {
                             Voltar Página
                 </Button>
                         <Button variant="contained" color="primary" style={{
-                            marginTop: "10px",
+                            
                             marginLeft: "auto",
                             textTransform: "none",
                             backgroundColor: "#3483fa",
@@ -147,11 +192,11 @@ function ProdutoModal({ data, open, onClose }) {
                         }}>
                             Enviar Comentário
                 </Button>
-                    </div>
+                    
                 </div>
             </div>
 
-        </div>
+        </Card>
     );
 }
 
