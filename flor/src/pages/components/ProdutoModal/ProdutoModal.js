@@ -49,11 +49,6 @@ const AccordionDetails = withStyles((theme) => ({
     },
 }))(MuiAccordionDetails);
 
-
-/*      (produto) ?
-      <h1>antes</h1>:<h1>depois</h1> */
-
-
 function ProdutoModal({ data, open, onClose }) {
     const [expanded, setExpanded] = React.useState();
     const [n,seTn] = useState(1);
@@ -63,10 +58,13 @@ function ProdutoModal({ data, open, onClose }) {
 
     function handleCar() {
         var z = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
+        console.log('z aqui:',z);
         let prod = data.produto_id;
         let x = [{ item : prod,quantidade : n}];
-
+        x = x.concat(z);
         sessionStorage.setItem('@flor/carrinho',JSON.stringify(x));
+        alert("Item adicionado ao carrinho com sucesso!");
+        onClose();
     }
 
     if (!open) return
@@ -119,7 +117,7 @@ function ProdutoModal({ data, open, onClose }) {
 </Form>
    
 
-                    <Button variant="contained" onClick={handleCar} color="primary" style={{
+                    <Button variant="contained" onClick={handleCar}  color="primary" style={{
                         marginLeft: "auto",
                         borderColor: "transparent",
                         textTransform: "none",
