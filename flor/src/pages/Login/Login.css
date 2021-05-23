@@ -76,6 +76,12 @@
     text-align: center;
     border-bottom-style: none;
 }
+.botaoSenhaLog{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+}
 
 @media (max-width:1600px){
     .imgLog{

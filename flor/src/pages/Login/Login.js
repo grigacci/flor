@@ -9,11 +9,13 @@ import api from "../../services/api";
 import { login } from "../../services/auth";
 import { ImUndo2 } from "react-icons/im";
 import { IconContext } from "react-icons";
+import LoginModal from "../components/LoginModal"
 
 function Login() {
   const history = useHistory();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [open, setOpen] = useState(false);
 
   async function handlelogin(e) {
     e.preventDefault();
@@ -49,97 +51,104 @@ function Login() {
       backgroundSize: "contain",
       backgroundRepeat: "repeat"
     }}>
-      
-        <card className="voltarLog">
-          <IconContext.Provider value={{ size: "1.5rem" }}>
-            <IconButton onClick={handleClick}  >
-              <ImUndo2 />
-            </IconButton>
-          </IconContext.Provider>
-        </card>
-        <div className="containe2Log">
-          <div
-            className="containe2Log"
-            style={{ padding: "0px", paddingBottom: "0px" }}
-          >
-            <Container style={{ paddingBottom: "0px" }}>
-              <Row style={{ paddingBottom: "0px" }}>
-                <Button
-                  onClick={() => history.push("login")}
-                  variant="link"
-                  style={{
-                    width: "50%",
-                    padding: "0px",
-                    margin: "0px",
-                    borderRadius: "0px",
-                    backgroundColor: "#f3dc01",
 
+      <card className="voltarLog">
+        <IconContext.Provider value={{ size: "1.5rem" }}>
+          <IconButton onClick={handleClick}  >
+            <ImUndo2 />
+          </IconButton>
+        </IconContext.Provider>
+      </card>
+      <div className="containe2Log">
+        <div
+          className="containe2Log"
+          style={{ padding: "0px", paddingBottom: "0px" }}
+        >
+          <Container style={{ paddingBottom: "0px" }}>
+            <Row style={{ paddingBottom: "0px" }}>
+              <Button
+                onClick={() => history.push("login")}
+                variant="link"
+                style={{
+                  width: "50%",
+                  padding: "0px",
+                  margin: "0px",
+                  borderRadius: "0px",
+                  backgroundColor: "#f3dc01",
+
+                  borderTopLeftRadius: "10px",
+                }}
+                selected
+              >
+                <Col
+                  style={{
+                    backgroundColor: "#f3dc01",
                     borderTopLeftRadius: "10px",
                   }}
-                  selected
                 >
-                  <Col
-                    style={{
-                      backgroundColor: "#f3dc01",
-                      borderTopLeftRadius: "10px",
-                    }}
-                  >
-                    <h4>Login</h4>
-                  </Col>
-                </Button>
-                <Button
-                  onClick={() => history.push("cadastro")}
-                  variant="link"
-                  style={{
-                    width: "50%",
-                    padding: "0px",
-                    margin: "0px",
-                    backgroundColor: "white",
-                    borderRadius: "0px",
-                    borderTopRightRadius: "10px",
-                  }}
-                >
-                  <Col style={{ borderTopRightRadius: "10px", }}>
-                    <h4>Cadastro</h4>
-                  </Col>
-                </Button>
-              </Row>
-            </Container>
-          </div>
-          <div
-            className="containeLog"
-            style={{
-              borderTopRightRadius: "0px",
-              borderTopLeftRadius: "0px",
-              paddingTop: "0px",
-            }}
-          >
-            <br />
-            <img src="/images/logo.png" alt="Logo" className="imgLog"></img>
-            <br />
-            <div className="linhaLog"></div>
-            <br></br>
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Insira o email" onChange={(e) => setEmail(e.target.value)} required />
-              </Form.Group>
+                  <h4>Login</h4>
+                </Col>
+              </Button>
+              <Button
+                onClick={() => history.push("cadastro")}
+                variant="link"
+                style={{
+                  width: "50%",
+                  padding: "0px",
+                  margin: "0px",
+                  backgroundColor: "white",
+                  borderRadius: "0px",
+                  borderTopRightRadius: "10px",
+                }}
+              >
+                <Col style={{ borderTopRightRadius: "10px", }}>
+                  <h4>Cadastro</h4>
+                </Col>
+              </Button>
+            </Row>
+          </Container>
+        </div>
+        <div
+          className="containeLog"
+          style={{
+            borderTopRightRadius: "0px",
+            borderTopLeftRadius: "0px",
+            paddingTop: "0px",
+          }}
+        >
+          <br />
+          <img src="/images/logo.png" alt="Logo" className="imgLog"></img>
+          <br />
+          <div className="linhaLog"></div>
+          <br></br>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Control type="email" placeholder="Insira o email" onChange={(e) => setEmail(e.target.value)} required />
+            </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} required />
-              </Form.Group>
-
+            <Form.Group controlId="formBasicPassword">
+              <Form.Control type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} required />
+            </Form.Group>
+            <div className="botaoSenhaLog">
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Lembrar de mim" />
               </Form.Group>
 
-              <div className="meioLog">
-                <Button variant="primary" type="submit" size="lg" onClick={handlelogin} block>
-                  Entrar
+              <Button variant="link" style={{ marginBottom: "1rem" }} onClick={() => setOpen(true)}>Esqueceu a senha?</Button>
+              <LoginModal
+                show={open}
+                onHide={() => setOpen(false)}
+              />
+            </div>
+
+            <div className="meioLog">
+              <Button variant="primary" type="submit" size="lg" onClick={handlelogin} block>
+                Entrar
                 </Button>
-              </div>
-            </Form>
-          </div>
+            </div>
+          </Form>
         </div>
+      </div>
 
 
     </div>
