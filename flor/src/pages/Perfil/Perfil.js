@@ -5,8 +5,16 @@ import api from "../../services/api";
 
 
 function Perfil() {
+  const [email, setEmail] = useState();
   const dados = JSON.parse(sessionStorage.getItem('@flor/dados'));
 
+  async function resetPassword(e) {
+    e.preventDefault();
+    api.post("/sendPasswordResetEmail", {email}).then(() => {
+      alert("Um email foi enviado para realizar a troca da senha")
+
+    }).catch((error) => {alert(error?.response?.data?.notification || "Erro ao enviar o email")})
+  }
 
   return (<div>
     <div style={{ marginTop: "5rem" }}>
@@ -135,15 +143,11 @@ function Perfil() {
               <br></br>
 
               <Form.Group controlId="formBasicCard">
-                <Form.Control type="number" placeholder="Senha Atual" value={dados.cartao} required />
+                <Form.Control placeholder="Insira seu email" required onChange={(e) => setEmail(e.target.value)}/>
               </Form.Group>
 
-              <Form.Group controlId="formBasicCard">
-                <Form.Control type="number" placeholder="Nova Senha" value={dados.cartao} required />
-              </Form.Group>
-
-              <Button variant="primary" type="submit" >
-                Alterar Senha
+              <Button variant="primary" type="submit" onClick={resetPassword} >
+                Enviar email 
               </Button>
             </Form>
             <br></br>

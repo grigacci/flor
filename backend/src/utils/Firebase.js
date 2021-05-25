@@ -1,4 +1,4 @@
-const firebase =  require("firebase/app");
+const firebase = require("firebase/app");
 require("firebase/auth");
 
 const firebaseConfig = {
@@ -12,15 +12,19 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 module.exports = {
-    async createNewUser(email, password){
-            const result = await firebase.auth().createUserWithEmailAndPassword(email,password);
-            return result.user.uid;
+    async createNewUser(email, password) {
+        const result = await firebase.auth().createUserWithEmailAndPassword(email, password);
+        return result.user.uid;
     },
 
-    async login(email, password){
-        const result = await firebase.auth().signInWithEmailAndPassword(email,password);
+    async login(email, password) {
+        const result = await firebase.auth().signInWithEmailAndPassword(email, password);
         return result.user.uid;
-    }
+    },
+    async sendPasswordResetEmail(email) {
+        const result = await firebase.auth().sendPasswordResetEmail(email);
+        return result;
+    },
 
-    
+
 }
