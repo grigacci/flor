@@ -86,5 +86,22 @@ module.exports = {
         }
 
     },
+    async sendPasswordResetEmail(request, response) {
+        try {
+            const {email} = request.body;
+            if (!email) return response.status(401).json({notification: "Request missing user email"})
+            const result = await Firebase.sendPasswordResetEmail(email)
+            return response.status(200).json(result);
 
+        } catch (err) {
+            console.warn("Send password failed:", err);
+
+            return response.status(500).json({
+                notification: "Internal server error while trying to reset password ",
+            });
+        }
+    },
+
+
+    
 };

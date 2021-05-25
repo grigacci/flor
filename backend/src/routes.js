@@ -13,6 +13,7 @@ const ComentValidator = require("./validators/ComentValidators");
 const SessionController = require("./controllers/SessionController");
 
 //Sessão
+routes.post("/sendPasswordResetEmail", SessionController.sendPasswordResetEmail);
 routes.post("/login", SessionController.signIn);
 routes.get("/barra", SessionController.barra)
 
@@ -24,6 +25,8 @@ routes.put("/produto/:produto_id", ProdutoController.updateById);
 routes.delete("/produto/:produto_id",ProdutoController.deleteById);
 
 //User
+
+routes.post("/sendPasswordResetEmail", UserController.sendPasswordResetEmail);
 routes.post("/users",UserValidator.create, UserController.create);
 routes.post("/cadastro",UserValidator.create, UserController.create);
 routes.get("/users/:user_id",UserValidator.getById,auth.authenticateToken, UserController.getById);

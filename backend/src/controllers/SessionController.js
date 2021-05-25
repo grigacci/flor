@@ -4,21 +4,21 @@ const jwt = require("jsonwebtoken");
 const storage = require('node-sessionstorage')
 
 module.exports = {
-    async signIn(request, response){
+    async signIn(request, response) {
         try {
-            let {email , password} = request.body;
+            let { email, password } = request.body;
 
             let uid;
             try {
                 uid = await Firebase.login(email, password);
-                
+
             } catch (error) {
                 console.warn(error)
                 return response.status(403).json({ message: "Credenciais inválidas" })
             }
-        
-            const user = await User.getByFields({"email" : email});
-            const accessToken = jwt.sign({user}, process.env.ACCESS_TOKEN_SECRET, {expiresIn : "300d",});
+
+            const user = await User.getByFields({ "email": email });
+            const accessToken = jwt.sign({ user }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "300d", });
             const nome = user.name;
             storage.setItem('nome', nome);
             storage.setItem('user_id', user.user_id);
@@ -32,18 +32,33 @@ module.exports = {
             storage.setItem('mes', user.mes);
             storage.setItem('ano', user.ano);
             storage.setItem('cvc', user.cvc);
-            return response.status(200).json({nome, accessToken});
+            return response.status(200).json({ nome, accessToken });
 
         } catch (error) {
             console.warn(error);
             return response
-            .status(500)
-            .json({ message : "Erro na validação das credenciais"})
+                .status(500)
+                .json({ message: "Erro na validação das credenciais" })
         }
     },
-    async barra(request, response){   
-            const nome = storage.getItem('nome');
-            return response.status(200).json(nome);
+    async barra(request, response) {
+        const nome = storage.getItem('nome');
+        return response.status(200).json(nome);
+    },
+    async sendPasswordResetEmail(request, response) {
+        try {
+            const {email} = request.body;
+            if (!email) return response.status(401).json({notification: "Request missing user email"})
+            const result = await Firebase.sendPasswordResetEmail(email)
+            return response.status(200).json(result);
+
+        } catch (err) {
+            console.warn("Send password failed:", err);
+
+            return response.status(500).json({
+                notification: "Internal server error while trying to reset password ",
+            });
+        }
     },
 
 };
