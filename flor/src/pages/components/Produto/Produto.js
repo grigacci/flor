@@ -62,10 +62,11 @@ function Produto() {
               onChange={(e) => { onChange(e.target.value) }}
             >
               <option value="Todas as categorias">Todas as categorias</option>
+              <option value="Flores variadas" >Flores variadas</option>
               <option value="Cestas de café" >Cestas de café</option>
               <option value="Buquê" >Buquê</option>
               <option value="Arranjos" >Arranjos</option>
-              <option value="Flores variadas" >Flores variadas</option>
+              
             </Form.Control>
         </Form.Group>
       </div>
