@@ -10,7 +10,7 @@ module.exports = {
     },
 
     async getAll(){
-        const result = await connection("produto").select("*");
+        const result = await connection("produto").select("*").orderBy("categoria","asc");
         return result;
     },
 
