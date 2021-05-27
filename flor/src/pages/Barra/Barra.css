@@ -5,7 +5,14 @@
 .listItemTextBarra{
     margin-left: 10px;
 }
-
+.linhaBar{
+    display:flex;
+    margin-left:auto;
+    margin-right:auto;
+    width: 90%;
+    border:1px solid;
+    color:rgb(204, 200, 200);
+  }
 .logoBarra{
     display:flex;
     flex-grow: 1;
