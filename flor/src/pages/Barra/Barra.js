@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Barra.css";
-
 import { AppBar, Menu, MenuItem, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, InputBase } from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
 import { IconContext } from "react-icons";
 import { GiSpotedFlower, GiRake } from "react-icons/gi";
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { FiMenu } from "react-icons/fi"
-import { RiAccountPinCircleFill } from "react-icons/ri";
-import { FormText, Dropdown } from "react-bootstrap";
+import { RiAccountPinCircleFill, RiDatabase2Line, RiDatabaseFill } from "react-icons/ri";
+import { FormText, Modal, Button } from "react-bootstrap";
+
 
 
 function Barra(props) {
@@ -18,8 +18,12 @@ function Barra(props) {
     const [open, setOpen] = useState(false);
     const [abrir, setAbrir] = useState(false);
     const [evento, setEvento] = React.useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [comprar, setComprar] = useState(false);
     let nome;
-    const dados = JSON.parse(sessionStorage.getItem('@flor/dados'));
+    const dados = sessionStorage.getItem('@flor/dados');
+    const data = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
+    console.log(data)
 
     if (dados) {
         nome = dados.name;
@@ -30,14 +34,16 @@ function Barra(props) {
     function abrirCarrinho(e) {
         setAbrir(e.currentTarget);
     }
-    function fecharCarrinho(){
+    function fecharCarrinho() {
         setAbrir(false)
     }
+    function abrirModal() {
+        setShowModal(true);
 
+    }
     function clicou(pathName) {
         history.push(pathName);
         setPaginaAtual(pathName);
-
     }
 
     function logout(pathName) {
@@ -80,7 +86,7 @@ function Barra(props) {
             iconSize: "1.5em",
         },
     ];
-
+    
     return (
         <div>
             <AppBar position="static">
@@ -107,10 +113,10 @@ function Barra(props) {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    
+
                     <div>
-                    <IconContext.Provider value={{ size: "1.5rem", className: "carrinhoBarra" }}>
-                       
+                        <IconContext.Provider value={{ size: "1.5rem", className: "carrinhoBarra" }}>
+
                             <IconButton onClick={abrirCarrinho} aria-controls="simple-produto" aria-haspopup="true">
 
                                 <AiOutlineShoppingCart />
@@ -124,10 +130,39 @@ function Barra(props) {
                                 onClose={fecharCarrinho}
                                 className="carrinhoproduto"
                             >
-                              <MenuItem onClick={() => { clicou("/Lista") }}>Produtos</MenuItem>
+                                <MenuItem onClick={abrirModal}>Produtos</MenuItem>
 
                             </Menu>
-                    </IconContext.Provider>
+                        </IconContext.Provider>
+
+                        <Modal
+                            show={showModal}
+                            onHide={() => setShowModal(false)}
+                            size="lg"
+                            aria-labelledby="contained-modal-title-vcenter"
+                            centered
+                            style={{ alignItems: "center" }}
+                        >
+                            <h3 style={{ alignSelf: "center" }}>Modal</h3>
+
+                            <Modal.Body>
+                                {
+                                    data &&
+                                    data.map((listItem, index) => {
+                                        return (
+                                            <card>
+                                                <p>{listItem.item}, quantidade : {listItem.quantidade}, preco :{listItem.preco}</p>
+                                            </card>
+                                        );
+                                    }
+                                    )
+                                }
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button >Comprar</Button>
+                                <Button onClick={() => setShowModal(false)}>Close</Button>
+                            </Modal.Footer>
+                        </Modal>
                     </div>
 
                     <div className="userContainerBarra">
@@ -194,4 +229,4 @@ function Barra(props) {
 }
 
 
-export default Barra;
+export default Barra ;
