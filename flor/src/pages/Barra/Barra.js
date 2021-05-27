@@ -25,6 +25,10 @@ function Barra(props) {
     const data = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
     console.log(data)
 
+    function handleBar() {
+        sessionStorage.setItem('@flor/bool', true);
+    }
+
     if (dados) {
         nome = dados.name;
     }
@@ -86,7 +90,7 @@ function Barra(props) {
             iconSize: "1.5em",
         },
     ];
-    
+
     return (
         <div>
             <AppBar position="static">
@@ -135,34 +139,32 @@ function Barra(props) {
                             </Menu>
                         </IconContext.Provider>
 
-                        <Modal
-                            show={showModal}
-                            onHide={() => setShowModal(false)}
-                            size="lg"
-                            aria-labelledby="contained-modal-title-vcenter"
-                            centered
-                            style={{ alignItems: "center" }}
-                        >
-                            <h3 style={{ alignSelf: "center" }}>Modal</h3>
-
-                            <Modal.Body>
-                                {
-                                    data &&
-                                    data.map((listItem, index) => {
+                        <Drawer anchor={"right"} open={showModal} onClose={() => setShowModal(false)} >
+                            <List style={{ width: "30rem", backgroundColor: "#e9e9e9", height: "100%" }}>
+                                <h2 style={{ display: "flex", justifyContent: "center" }}>Seu Carrinho</h2>
+                                <br></br>
+                                {data &&
+                                    data.map((listItem) => {
                                         return (
-                                            <card>
-                                                <p>{listItem.item}, quantidade : {listItem.quantidade}, preco :{listItem.preco}</p>
-                                            </card>
+                                            <>
+                                                <ListItem>
+                                                    <card style={{ display: "flex", flexDirection: "row" }}>
+                                                        <p>{listItem.item} &nbsp;</p>
+                                                        <p> | Un:{listItem.quantidade} &nbsp;</p>
+                                                        <p> | R${listItem.preco} &nbsp;</p>
+                                                    </card>
+                                                </ListItem>
+                                                <div className="linhaBar" />
+                                            </>
                                         );
-                                    }
-                                    )
-                                }
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button >Comprar</Button>
-                                <Button onClick={() => setShowModal(false)}>Close</Button>
-                            </Modal.Footer>
-                        </Modal>
+
+                                    })}
+                                <div className="linhaBar" />
+                                <p>Subtotal: </p> 
+                                <Button onclick={handleBar()}></Button>
+                            </List>
+                        </Drawer>
+
                     </div>
 
                     <div className="userContainerBarra">
@@ -193,7 +195,7 @@ function Barra(props) {
 
                 </Toolbar>
             </AppBar>
-            {props.children}
+            { props.children}
             <Drawer open={open} onClose={() => abrirMenu(false)}>
                 <List className="listaBarra">
                     {pages.map((listItem) => {
@@ -219,7 +221,7 @@ function Barra(props) {
                     })}
 
                 </List>
-            </Drawer></div>
+            </Drawer></div >
 
 
 
@@ -229,4 +231,4 @@ function Barra(props) {
 }
 
 
-export default Barra ;
+export default Barra;

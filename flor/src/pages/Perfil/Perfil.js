@@ -7,13 +7,15 @@ import api from "../../services/api";
 function Perfil() {
   const [email, setEmail] = useState();
   const dados = JSON.parse(sessionStorage.getItem('@flor/dados'));
-
+  const prod = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
+  const aux = JSON.parse(sessionStorage.getItem('@flor/bool'));
+  console.log(aux)
   async function resetPassword(e) {
     e.preventDefault();
-    api.post("/sendPasswordResetEmail", {email}).then(() => {
+    api.post("/sendPasswordResetEmail", { email }).then(() => {
       alert("Um email foi enviado para realizar a troca da senha")
 
-    }).catch((error) => {alert(error?.response?.data?.notification || "Erro ao enviar o email")})
+    }).catch((error) => { alert(error?.response?.data?.notification || "Erro ao enviar o email") })
   }
 
   return (<div>
@@ -143,11 +145,11 @@ function Perfil() {
               <br></br>
 
               <Form.Group controlId="formBasicCard">
-                <Form.Control placeholder="Insira seu email" required onChange={(e) => setEmail(e.target.value)}/>
+                <Form.Control placeholder="Insira seu email" required onChange={(e) => setEmail(e.target.value)} />
               </Form.Group>
 
               <Button variant="primary" type="submit" onClick={resetPassword} >
-                Enviar email 
+                Enviar email
               </Button>
             </Form>
             <br></br>
@@ -161,6 +163,9 @@ function Perfil() {
                 <Card.Body>
                   <Card.Title>Pedido #25</Card.Title>
                   <Card.Text>
+                    {
+                      aux ? prod[1].item : "deu ruim"
+                    }
                     <ul style={{ textAlign: "left", marginLeft: "1rem" }}>
                       <li>Flor azul</li>
                       <li>Tulipa</li>
