@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Barra.css";
 import { AppBar, Menu, MenuItem, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, InputBase } from "@material-ui/core";
@@ -7,8 +7,8 @@ import { IconContext } from "react-icons";
 import { GiSpotedFlower, GiRake } from "react-icons/gi";
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { FiMenu } from "react-icons/fi"
-import { RiAccountPinCircleFill, RiDatabase2Line, RiDatabaseFill } from "react-icons/ri";
-import { FormText, Modal, Button } from "react-bootstrap";
+import { RiAccountPinCircleFill,  } from "react-icons/ri";
+import { FormText, Button } from "react-bootstrap";
 
 
 
@@ -20,20 +20,32 @@ function Barra(props) {
     const [evento, setEvento] = React.useState(false);
     const [showModal, setShowModal] = useState(false);
     const [comprar, setComprar] = useState(false);
-    let nome;
-    const dados = sessionStorage.getItem('@flor/dados');
-    const data = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
-    console.log(data)
+  
 
-    function handleBar() {
-        sessionStorage.setItem('@flor/bool', true);
+    let nome;
+    const dados = JSON.parse(sessionStorage.getItem('@flor/dados'));
+    const data = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
+   
+    console.log(data)
+    
+
+    function handleBar(){
+        if(data)
+        setComprar(1)
+        
     }
+        if(comprar===1)
+        sessionStorage.setItem('@flor/bool', true);
+      
+
+    
 
     if (dados) {
+        
         nome = dados.name;
     }
     else {
-        nome = "Visitante"
+       nome="visitante"
     }
     function abrirCarrinho(e) {
         setAbrir(e.currentTarget);
@@ -160,8 +172,9 @@ function Barra(props) {
 
                                     })}
                                 <div className="linhaBar" />
-                                <p>Subtotal: </p> 
-                                <Button onclick={handleBar()}></Button>
+                                <p style={{display:"flex" ,marginTop:"auto"}}>Subtotal: </p> 
+                                <Button style={{display:"flex" ,marginTop:"auto"}} onClick={handleBar}>comprar</Button>
+                                
                             </List>
                         </Drawer>
 
