@@ -25,6 +25,7 @@ function Cadastro() {
   async function handleCad(e) {
     e.preventDefault();
     try {
+      // eslint-disable-next-line no-unused-vars
       const response3 = await api.post('/cadastro', { email, password, name, endereco, cidade, estado, cep, flor });
       const response = await api.post('/login', { email, password });
       alert("Bem vindo", response.data);
@@ -41,7 +42,7 @@ function Cadastro() {
         alert("Credenciais inválidas")
       }
       else {
-        alert("Opa");
+        alert("Dados já foram utilizados ou  estão incorretos");
       }
     }
   }

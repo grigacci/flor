@@ -5,7 +5,7 @@ import api from '../../../services/api';
 import Form from 'react-bootstrap/Form'
 import { makeStyles } from '@material-ui/core/styles';
 import ProdutoModal from "../ProdutoModal"
-import { Col } from "react-bootstrap";
+
 
 const _produtos = []
 
