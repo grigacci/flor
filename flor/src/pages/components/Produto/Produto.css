@@ -28,9 +28,9 @@
 
 .boxListProd:hover{
     box-shadow:
-    1px 1px #53a7ea,
-    2px 2px #53a7ea,
-    3px 3px #53a7ea;
+    1px 1px rgb(243, 220, 1, 0.8),
+    2px 2px rgb(243, 220, 1, 0.8),
+    3px 3px rgb(243, 220, 1, 0.8);
     -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
 }

@@ -178,8 +178,8 @@ function Barra(props) {
                                     })}
 
                                 <div style={{display:"flex", flexDirection:"row", marginTop:"1rem", backgroundColor: "#e9e9e9"}}>
-                                    <p style={{ display: "flex", marginLeft: "2rem" }}>Subtotal: {subtotal} Reais</p>
-                                    <Button style={{ display: "flex", marginLeft:"auto", marginRight:"2rem" }} onClick={handleBar}>Comprar</Button>
+                                    <p style={{ display: "flex", marginLeft: "2rem", marginRight:"1rem" }}>Subtotal: {subtotal} Reais</p>
+                                    <Button style={{ display: "flex", marginLeft:"auto", marginRight:"2rem" }} className="botao" onClick={handleBar}>Comprar</Button>
                                 </div>
 
 
