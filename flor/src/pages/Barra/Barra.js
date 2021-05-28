@@ -30,8 +30,8 @@ function Barra(props) {
 
 
     function handleBar() {
-        if (data)
-            setComprar(1)
+        if (data)setComprar(1)
+        setShowModal(false)    
 
     }
     if (comprar === 1)
@@ -152,7 +152,7 @@ function Barra(props) {
                         </IconContext.Provider>
 
                         <Drawer anchor={"right"} open={showModal} onClose={() => setShowModal(false)} >
-                            <List style={{ width: "30rem", backgroundColor: "#e9e9e9", height: "100%" }}>
+                            <List className={"drawerBar"}>
                                 <h2 style={{ display: "flex", justifyContent: "center" }}>Seu Carrinho</h2>
                                 <br></br>
                                 {data &&
@@ -161,8 +161,8 @@ function Barra(props) {
                                         var nome = `/images/${listItem.id}.jpg`;
                                         return (
                                             <>
-                                                <ListItem>
-                                                    <card style={{ display: "flex", flexDirection: "row" }}>
+                                                <ListItem style={{backgroundColor: "#e9e9e9"}}>
+                                                    <card style={{ backgroundColor: "#e9e9e9",display: "flex", flexDirection: "row" }}>
                                                         <img src={nome} className="imgCarBar"></img>
                                                         <div className="descricaoProdBar">
                                                             <p className="textItemBar">{listItem.item} &nbsp;</p>
@@ -177,7 +177,7 @@ function Barra(props) {
 
                                     })}
 
-                                <div style={{display:"flex", flexDirection:"row", marginTop:"1rem"}}>
+                                <div style={{display:"flex", flexDirection:"row", marginTop:"1rem", backgroundColor: "#e9e9e9"}}>
                                     <p style={{ display: "flex", marginLeft: "2rem" }}>Subtotal: {subtotal} Reais</p>
                                     <Button style={{ display: "flex", marginLeft:"auto", marginRight:"2rem" }} onClick={handleBar}>Comprar</Button>
                                 </div>
