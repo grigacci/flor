@@ -33,7 +33,7 @@ function Perfil() {
             <Col>
               <div>
                 <div className="boxPer">
-                  <h3 style={{ fontSize: "22px" }}>Informações</h3>
+                  <h3 style={{ fontSize: "22px", display:"flex", justifyContent:"center" }}>Informações</h3>
                 </div>
                 <br></br>
                 <Form>
@@ -141,7 +141,7 @@ function Perfil() {
 
                   <br></br>
                   <div className="boxPer">
-                    <h3 style={{ fontSize: "22px" }}>
+                    <h3 style={{ fontSize: "22px" ,display:"flex",justifyContent:"center" }}>
                       Informações de pagamento
                     </h3>
                   </div>
@@ -187,7 +187,7 @@ function Perfil() {
                       />
                     </Form.Group>
                   </Form.Row>
-                  <Button variant="primary" type="submit">
+                  <Button className="botao" type="submit">
                     Alterar
                   </Button>
                 </Form>
@@ -197,7 +197,7 @@ function Perfil() {
             <Col>
               <Form>
                 <div className="boxPer">
-                  <h3 style={{ fontSize: "22px" }}>Alterar Senha</h3>
+                  <h3 style={{ fontSize: "22px",display:"flex", justifyContent:"center" }}>Alterar Senha</h3>
                 </div>
                 <br></br>
 
@@ -209,20 +209,20 @@ function Perfil() {
                   />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" onClick={resetPassword}>
+                <Button className="botao" type="submit" onClick={resetPassword}>
                   Enviar email
                 </Button>
               </Form>
               <br></br>
               <div className="boxPer">
-                <h3 style={{ fontSize: "22px" }}>Últimos pedidos</h3>
+                <h3 style={{ fontSize: "22px", display:"flex",justifyContent:"center" }}>Últimos pedidos</h3>
               </div>
               <br></br>
 
               <div className="alinharPer">
                 <Card style={{ width: "19rem" }}>
                   <Card.Body>
-                    <Card.Title>Pedido #25</Card.Title>
+                    <Card.Title>Pedido #</Card.Title>
                     <Card.Text>
                       <ul style={{ textAlign: "left", marginLeft: "1rem" }}>
                       {

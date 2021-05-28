@@ -119,13 +119,12 @@ function ProdutoModal({ data, open, onClose }) {
                     </Form>
 
 
-                    <Button variant="contained" onClick={handleCar} color="primary" style={{
+                    <Button className="botao" onClick={handleCar} color="primary" style={{
                         marginLeft: "auto",
-                        borderColor: "transparent",
                         textTransform: "none",
-                        backgroundColor: "#3483fa",
-                        color: "#fff",
-                        marginBottom: "3px"
+                        color: "#212529",
+                        backgroundColor: "rgb(243, 220, 1, 0.8)",
+                        borderColor: "black",
                     }}>
                         Adicionar ao carrinho
                 </Button>
@@ -172,21 +171,23 @@ function ProdutoModal({ data, open, onClose }) {
                     />
                 </div>
                 <div className="buttonsRowProduto">
-                    <Button onClick={onClose} style={{
+                    <Button className="botao" onClick={onClose} style={{
 
                         marginRight: "auto",
                         textTransform: "none",
-                        backgroundColor: "rgba(65,137,230,.15)",
-                        color: "#3483fa",
+                        color: "#212529",
+                        backgroundColor: "rgb(243, 220, 1, 0.8)",
+                        borderColor: "black",
                     }}>
                         Voltar Página
                 </Button>
-                    <Button variant="contained" color="primary" style={{
+                    <Button className="botao"  style={{
 
                         marginLeft: "auto",
                         textTransform: "none",
-                        backgroundColor: "#3483fa",
-                        color: "#fff",
+                        color: "#212529",
+                        backgroundColor: "rgb(243, 220, 1, 0.8)",
+                        borderColor: "black",
                     }}>
                         Enviar Comentário
                 </Button>

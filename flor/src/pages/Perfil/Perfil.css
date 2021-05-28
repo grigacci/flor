@@ -3,11 +3,17 @@
     width: auto;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: whitesmoke;
+    background-color: rgb(243, 220, 1, 0.8);
 }
 
 .alinharPer{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.botao{
+    color: #212529;
+    background-color: rgb(243, 220, 1, 0.8);
+    border-color: black;
 }
