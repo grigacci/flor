@@ -7,7 +7,7 @@ import { IconContext } from "react-icons";
 import { GiSpotedFlower, GiRake } from "react-icons/gi";
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { FiMenu } from "react-icons/fi"
-import { RiAccountPinCircleFill,  } from "react-icons/ri";
+import { RiAccountPinCircleFill, } from "react-icons/ri";
 import { FormText, Button } from "react-bootstrap";
 
 
@@ -20,32 +20,32 @@ function Barra(props) {
     const [evento, setEvento] = React.useState(false);
     const [showModal, setShowModal] = useState(false);
     const [comprar, setComprar] = useState(false);
-  
+
 
     let nome;
     const dados = JSON.parse(sessionStorage.getItem('@flor/dados'));
     const data = JSON.parse(sessionStorage.getItem('@flor/carrinho'));
-   
+
     console.log(data)
-    
 
-    function handleBar(){
-        if(data)
-        setComprar(1)
-        
+
+    function handleBar() {
+        if (data)
+            setComprar(1)
+
     }
-        if(comprar===1)
+    if (comprar === 1)
         sessionStorage.setItem('@flor/bool', true);
-      
 
-    
+
+
 
     if (dados) {
-        
+
         nome = dados.name;
     }
     else {
-       nome="visitante"
+        nome = "visitante"
     }
     function abrirCarrinho(e) {
         setAbrir(e.currentTarget);
@@ -102,7 +102,7 @@ function Barra(props) {
             iconSize: "1.5em",
         },
     ];
-
+    let subtotal = 0;
     return (
         <div>
             <AppBar position="static">
@@ -157,13 +157,18 @@ function Barra(props) {
                                 <br></br>
                                 {data &&
                                     data.map((listItem) => {
+                                        subtotal = subtotal + listItem.preco;
+                                        var nome = `/images/${listItem.id}.jpg`;
                                         return (
                                             <>
                                                 <ListItem>
                                                     <card style={{ display: "flex", flexDirection: "row" }}>
-                                                        <p>{listItem.item} &nbsp;</p>
-                                                        <p> | Un:{listItem.quantidade} &nbsp;</p>
-                                                        <p> | R${listItem.preco} &nbsp;</p>
+                                                        <img src={nome} className="imgCarBar"></img>
+                                                        <div className="descricaoProdBar">
+                                                            <p className="textItemBar">{listItem.item} &nbsp;</p>
+                                                            <p className="textItemBar">Un:{listItem.quantidade} &nbsp;</p>
+                                                            <p className="textItemBar">R${listItem.preco} &nbsp;</p>
+                                                        </div>
                                                     </card>
                                                 </ListItem>
                                                 <div className="linhaBar" />
@@ -171,10 +176,13 @@ function Barra(props) {
                                         );
 
                                     })}
-                                <div className="linhaBar" />
-                                <p style={{display:"flex" ,marginTop:"auto"}}>Subtotal: </p> 
-                                <Button style={{display:"flex" ,marginTop:"auto"}} onClick={handleBar}>comprar</Button>
-                                
+
+                                <div style={{display:"flex", flexDirection:"row", marginTop:"1rem"}}>
+                                    <p style={{ display: "flex", marginLeft: "2rem" }}>Subtotal: {subtotal} Reais</p>
+                                    <Button style={{ display: "flex", marginLeft:"auto", marginRight:"2rem" }} onClick={handleBar}>Comprar</Button>
+                                </div>
+
+
                             </List>
                         </Drawer>
 
